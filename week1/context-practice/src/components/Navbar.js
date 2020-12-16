@@ -1,19 +1,16 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import "../apps/App.css"
+import ThemeContext from "../apps/themeContext"
 
-function Navbar (props) {
-
-    const style = {
-        padding: "10px"
-    }
-
+function Navbar() {
     return (
-        <div style={{textAlign: "center", padding: "20px"}}>
-            <span style={style}>
-                <Link to="/">Home</Link>
-            </span>
-        </div>
+        <ThemeContext.Consumer>
+            {theme => (
+                <div className={`${theme}-theme`}
+                    style={{textAlign: "center", padding: "20px"}}>
+                    <span style={{padding: "10px"}}>Navbar</span>
+                </div>
+            )}
+        </ThemeContext.Consumer>
     )
 }
 

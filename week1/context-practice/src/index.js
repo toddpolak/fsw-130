@@ -1,10 +1,11 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import { BrowserRouter } from "react-router-dom"
+import ThemeContext from "./apps/themeContext"
 import App from "./apps/App"
 
 ReactDOM.render(
-    <BrowserRouter>
+    <ThemeContext.Provider value={"dark"}>
         <App />
-    </BrowserRouter>, 
-    document.getElementById('root'))
+    </ThemeContext.Provider>, 
+    document.getElementById("root")
+)

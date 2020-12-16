@@ -1,16 +1,15 @@
 import React from 'react'
-import { Switch, Route } from "react-router-dom"
 import NavBar from "../components/Navbar"
-import Home from "../pages/Home"
+import Main from "../components/Main"
+import Footer from "../components/Footer"
 import "../apps/App.css"
 
 function App() {
     return (
         <div>
             <NavBar />
-            <Switch>
-                <Route exact path="/" component={Home}></Route>
-            </Switch>
+            <Main />
+            <Footer />
         </div>
     )
 }
