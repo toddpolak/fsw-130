@@ -5,11 +5,6 @@ import {ThemeContextProvider} from "./apps/themeContext"
 import App from './apps/App'
 
 ReactDOM.render(
-    /*
-    <ThemeContext.Provider value={'light'}>
-        <App />
-    </ThemeContext.Provider>,
-    */
    <ThemeContextProvider>
         <App />
     </ThemeContextProvider>, 

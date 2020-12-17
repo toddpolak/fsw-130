@@ -2,9 +2,6 @@ import React, {Component} from "react"
 
 const {Provider, Consumer} = React.createContext()
 
-//const ThemeContext = React.createContext()
-//export default ThemeContext
-
 class ThemeContextProvider extends Component {
     state = {
         theme: "dark"
