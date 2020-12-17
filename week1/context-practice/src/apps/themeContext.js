@@ -3,10 +3,14 @@ import React, {Component} from "react"
 const {Provider, Consumer} = React.createContext()
 
 class ThemeContextProvider extends Component {
-    state = {
-        theme: "dark"
-    }
+    constructor() {
+        super()
 
+        this.state = {
+            theme: "dark"
+        }
+    }
+  
     selectTheme = (event) => {
         this.setState({theme: event.target.value})
     }
