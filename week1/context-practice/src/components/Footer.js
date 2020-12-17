@@ -7,6 +7,9 @@ class Footer extends Component {
     //static contextType = ThemeContextConsumer
 
     render() {
+
+        console.log(this.context)
+
         return(
             <footer className={`${this.context}-theme`}>
                 <div style={{textAlign: 'center', padding: '20px'}}>
