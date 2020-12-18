@@ -1,10 +1,10 @@
-import React, {Component} from "react"
+import React, { Component } from "react"
 
-const {Provider, Consumer} = React.createContext()
+export const AppContext = React.createContext('app')
 
-class ThemeContextProvider extends Component {
-    constructor() {
-        super()
+class AppProvider extends Component {
+    constructor(props) {
+        super(props)
 
         this.state = {
             theme: "dark"
@@ -17,13 +17,13 @@ class ThemeContextProvider extends Component {
     
     render() {
         return (
-            <Provider value={{
+            <AppContext.Provider value={{
                 theme: this.state.theme, 
                 selectTheme: this.selectTheme}}>
                 {this.props.children}
-            </Provider>
+            </AppContext.Provider>
         )
     }
 }
 
-export {ThemeContextProvider, Consumer as ThemeContextConsumer}
+export default AppProvider

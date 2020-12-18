@@ -1,17 +1,16 @@
-import React from 'react'
-import NavBar from "../components/Navbar"
+import React, { Component } from 'react'
+import { AppProvider } from '../apps/AppProvider'
 import Main from "../components/Main"
-import Footer from "../components/Footer"
 import "../apps/App.css"
 
-function App() {
-    return (
-        <div>
-            <NavBar />
-            <Main />
-            <Footer />
-        </div>
-    )
+class App extends Component {
+    render() {
+        return (
+            <AppProvider>
+                <Main />
+            </AppProvider>
+        )
+    }
 }
 
 export default App
