@@ -4,9 +4,9 @@ import { withAppContext } from '../apps/withAppContext'
 class Main extends Component {
     render() {
         return (
-            <main className={`${this.props.context.theme}-theme`}>
-                <div>
-                    <div className='common'>
+            <main >
+                <div className={`${this.props.context.theme}-theme common`}>
+
                         <h2>Select a theme from the menu!</h2>
                         <select 
                             value={this.props.context.theme} 
@@ -18,7 +18,7 @@ class Main extends Component {
                             <option value='purple'>Purple</option>
                             <option value='blue'>Blue</option>
                         </select>
-                    </div>
+
                 </div>
             </main>
         )

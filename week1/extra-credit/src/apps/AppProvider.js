@@ -1,10 +1,10 @@
 import React, { Component } from "react"
 
-export const AppContext = React.createContext('app')
+export const AppContext = React.createContext()
 
 class AppProvider extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
 
         this.state = {
             theme: "dark"
@@ -16,6 +16,9 @@ class AppProvider extends Component {
     }
     
     render() {
+
+        console.log(this.props.children)
+        
         return (
             <AppContext.Provider value={{
                 theme: this.state.theme, 
