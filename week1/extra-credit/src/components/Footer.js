@@ -1,18 +1,16 @@
-import React from 'react'
-import {ThemeContextConsumer} from "../apps/themeContext"
+import React, { Component } from 'react'
+import { withAppContext } from '../apps/withAppContext'
 
-function Footer() {
-    return (
-        <ThemeContextConsumer>
-            {context => (
-                <footer className={`${context.theme}-theme`}>
-                    <div style={{textAlign: 'center', padding: '20px'}}>
-                        <span>The amazing Footer</span>
-                    </div>
-                </footer>
-            )}
-        </ThemeContextConsumer>
-    )
+class Footer extends Component {
+    render() {
+        return (
+            <footer className={`${this.props.context.theme}-theme`}>
+                <div style={{textAlign: 'center', padding: '20px'}}>
+                    <span>The amazing Footer</span>
+                </div>
+            </footer>
+        )
+    }
 }
-
-export default Footer
+    
+export default withAppContext(Footer)

@@ -1,19 +1,17 @@
-import React from 'react'
-import {ThemeContextConsumer} from "../apps/themeContext"
+import React, { Component } from 'react'
+import { withAppContext } from '../apps/withAppContext'
 
-function Navbar() {
-    return (
-        <ThemeContextConsumer>
-            {context => (
-                <div className={`${context.theme}-theme`}
-                    style={{textAlign: 'center', padding: '20px'}}>
-                    <span style={{padding: '10px'}}>Home</span>
-                    <span style={{padding: '10px'}}>About</span>
-                    <span style={{padding: '10px'}}>Contact</span>
-                </div>
-            )}
-        </ThemeContextConsumer>
-    )
+class Navbar extends Component {
+    render() {
+        return (
+            <div className={`${this.props.context.theme}-theme`}
+                style={{textAlign: 'center', padding: '20px'}}>
+                <span style={{padding: '10px'}}>Home</span>
+                <span style={{padding: '10px'}}>About</span>
+                <span style={{padding: '10px'}}>Contact</span>
+            </div>
+        )
+    }
 }
-
-export default Navbar
+   
+export default withAppContext(Navbar)
