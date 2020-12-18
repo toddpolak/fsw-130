@@ -1,0 +1,28 @@
+.default-theme {
+    background-color: white;
+    color: black;
+}
+.dark-theme {
+    background-color: #333333;
+    color: whitesmoke;
+}
+.light-theme {
+    background-color: whitesmoke;
+    color: #333333;
+}
+.red-theme {
+    background-color: firebrick;
+    color: whitesmoke
+}
+.pink-theme {
+    background-color: pink;
+    color: black;
+}
+.purple-theme {
+    background-color: purple;
+    color: whitesmoke;
+}
+.blue-theme {
+    background-color: lightsteelblue;
+    color: black;
+}
