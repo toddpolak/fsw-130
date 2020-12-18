@@ -5,7 +5,7 @@ class Footer extends Component {
     render() {
         return (
             <footer className={`${this.props.context.theme}-theme`}>
-                <div style={{textAlign: 'center', padding: '20px'}}>
+                <div className='common'>
                     <span>The amazing Footer</span>
                 </div>
             </footer>

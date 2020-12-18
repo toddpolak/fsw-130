@@ -5,7 +5,7 @@ class Main extends Component {
     render() {
         return (
             <main className={`${this.props.context.theme}-theme`}>
-                <div style={{textAlign: 'center', padding: '20px'}}>
+                <div className='common'>
                     <h2>Select a theme from the menu!</h2>
                     <select 
                         value={this.props.context.theme} 
