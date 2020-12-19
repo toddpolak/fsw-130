@@ -3,10 +3,6 @@ import { withAppContext } from '../apps/withAppContext'
 
 class Main extends Component {
     render() {
-
-        console.log(this.props.context.theme)
-        console.log(this.props.context.layout)
-
         return (
             <main className={this.props.context.layout}>
                 <div className={`${this.props.context.theme}-theme common`}>

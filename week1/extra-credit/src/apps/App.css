@@ -3,7 +3,6 @@
     padding: 20px;
 }
 
-
 nav {
     padding: 20px;
 }
@@ -13,47 +12,27 @@ nav div {
 nav.horizontal div {
     width: 50px;
     height: 100px;
-    /*
-    display: inline;
-    */
 }
 nav.vertical div {
-    width: 600px;
-    /*
-    display: block;
-    */
+    width: 500px;
 }
 
 main {
     width: 500px;
 }
-
-/*
-main {
-    background-color: whitesmoke;
-    border: 1px solid red;
-    padding: 30px;
-}
-*/
-
 main div {
     border: 2px solid green;
-    /*
-    height: 360px;
-    */
 }
-
 main.horizontal div {
     position: absolute;
-    top: 50px;
-    left: 150px;
+    top: 21px;
+    left: 130px;
     width: 400px;
 }
-
 main.vertical div {
-    width: 400px;
+    width: 500px;
+    margin-left: 20px;
 }
-
 
 footer {
     padding: 20px;
@@ -61,11 +40,16 @@ footer {
 footer div {
     border: 1px solid black;
 }
+footer.horizontal div {
+    width: 515px;
+}
 
-
+footer.vertical div {
+    width: 504px;
+}
 
 .dark-theme {
-    background-color: #333333;
+    background-color: black;
     color: whitesmoke;
 }
 .light-theme {

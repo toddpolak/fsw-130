@@ -5,13 +5,10 @@ class Navbar extends Component {
     render() {
         return (
             <nav className={this.props.context.layout}>
-
                 <div className={`${this.props.context.theme}-theme common`}>
-
                     <span>
                         Home About Contact
                     </span>
-
                 </div>
             </nav>
         )
