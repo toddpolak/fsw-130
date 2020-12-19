@@ -1,4 +1,4 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
 export const AppContext = React.createContext()
 
@@ -7,18 +7,26 @@ class AppProvider extends Component {
         super()
 
         this.state = {
-            theme: "dark"
+            theme: 'dark',
+            layout: 'vertical'
         }
     }
   
     selectTheme = (event) => {
-        this.setState({theme: event.target.value})
+        const selTheme = event.target.value
+
+        selTheme === 'dark' || selTheme ==='blue'
+            ? this.setState({layout: 'vertical'})
+            : this.setState({layout: 'horizontal'})
+
+        this.setState({theme: selTheme})
     }
     
     render() {
         return (
             <AppContext.Provider value={{
-                theme: this.state.theme, 
+                theme: this.state.theme,
+                layout: this.state.layout,
                 selectTheme: this.selectTheme}}>
                 {this.props.children}
             </AppContext.Provider>

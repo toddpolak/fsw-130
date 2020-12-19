@@ -8,16 +8,48 @@ nav {
 nav div {
     border: 1px solid black;
 }
+
+nav.horizontal div {
+    width: 300px;
+    /*
+    display: inline;
+    */
+}
+
+nav.vertical div {
+    width: 600px;
+    /*
+    display: block;
+    */
+}
+
+
+
 main {
     background-color: whitesmoke;
     border: 1px solid black;
     padding: 30px;
+    /*
     height: 400px;
+    */
 }
 main div {
     border: 1px solid black;
+    /*
     height: 360px;
+    */
 }
+
+main.horizontal div {
+    width: 300px;
+}
+
+main.vertical div {
+    width: 600px;
+}
+
+
+
 footer {
     padding: 20px;
 }
