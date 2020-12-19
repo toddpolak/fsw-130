@@ -6,7 +6,6 @@ class Main extends Component {
         return (
             <main >
                 <div className={`${this.props.context.theme}-theme common`}>
-
                         <h2>Select a theme from the menu!</h2>
                         <select 
                             value={this.props.context.theme} 
