@@ -1,5 +1,5 @@
 import React from 'react'
-import { AppContext } from '../apps/AppProvider'
+import { AppContext } from './AppProvider'
 
 export function withAppContext(Component) {
     return function WrapperComponent(props) {
