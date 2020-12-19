@@ -16,9 +16,6 @@ class AppProvider extends Component {
     }
     
     render() {
-
-        console.log(this.props.children)
-        
         return (
             <AppContext.Provider value={{
                 theme: this.state.theme, 
