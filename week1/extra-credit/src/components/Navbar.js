@@ -8,11 +8,9 @@ class Navbar extends Component {
 
                 <div className={`${this.props.context.theme}-theme common`}>
 
-                    <span style={{padding: '10px'}}>
+                    <span>
                         Home About Contact
                     </span>
-
-
 
                 </div>
             </nav>
