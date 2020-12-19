@@ -2,20 +2,21 @@
     text-align: center;
     padding: 20px;
 }
+
+
 nav {
     padding: 20px;
 }
 nav div {
     border: 1px solid black;
 }
-
 nav.horizontal div {
-    width: 300px;
+    width: 50px;
+    height: 100px;
     /*
     display: inline;
     */
 }
-
 nav.vertical div {
     width: 600px;
     /*
@@ -23,31 +24,35 @@ nav.vertical div {
     */
 }
 
+main {
+    width: 500px;
+}
 
-
+/*
 main {
     background-color: whitesmoke;
-    border: 1px solid black;
+    border: 1px solid red;
     padding: 30px;
-    /*
-    height: 400px;
-    */
 }
+*/
+
 main div {
-    border: 1px solid black;
+    border: 2px solid green;
     /*
     height: 360px;
     */
 }
 
 main.horizontal div {
-    width: 300px;
+    position: absolute;
+    top: 50px;
+    left: 150px;
+    width: 400px;
 }
 
 main.vertical div {
-    width: 600px;
+    width: 400px;
 }
-
 
 
 footer {
@@ -56,6 +61,12 @@ footer {
 footer div {
     border: 1px solid black;
 }
+footer.horizontal div {
+
+
+}
+
+
 .dark-theme {
     background-color: #333333;
     color: whitesmoke;
