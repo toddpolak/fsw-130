@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import AppProvider from '../apps/AppProvider'
+import AppProvider from './AppProvider'
 import Navbar from '../components/Navbar'
 import Main from '../components/Main'
 import Footer from '../components/Footer'
-import '../apps/App.css'
+import './App.css'
 
 class App extends Component {
     render() {
