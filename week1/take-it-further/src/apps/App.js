@@ -9,7 +9,7 @@ class App extends Component {
     render() {
         return (
             <AppProvider>
-                <div style={{position: 'relative', width: '600px', border: '2px solid black'}}>
+                <div className='container'>
                     <Navbar />
                     <Main />
                     <Footer />

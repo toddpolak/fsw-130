@@ -11,9 +11,9 @@ class Main extends Component {
                         value={this.props.context.theme} 
                         onChange={this.props.context.selectTheme}>
                         <option value='dark'>Dark</option>
-                        <option value='blue'>Blue</option>
                         <option value='light'>Light</option>
                         <option value='pink'>Pink</option>
+                        <option value='blue'>Blue</option>
                     </select>
                 </div>
             </main>
