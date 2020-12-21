@@ -1,6 +1,6 @@
-.default-theme {
-    background-color: white;
-    color: black;
+.container {
+    width: 600px;
+    margin: auto;
 }
 .dark-theme {
     background-color: #333333;
@@ -10,19 +10,10 @@
     background-color: whitesmoke;
     color: #333333;
 }
-.red-theme {
-    background-color: firebrick;
-    color: whitesmoke
+.common {
+    text-align: center;
+    padding: 20px;
 }
-.pink-theme {
-    background-color: pink;
-    color: black;
-}
-.purple-theme {
-    background-color: purple;
-    color: whitesmoke;
-}
-.blue-theme {
-    background-color: lightsteelblue;
-    color: black;
+.nav-padding {
+    padding: 10px;
 }

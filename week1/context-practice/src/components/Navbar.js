@@ -5,11 +5,10 @@ function Navbar() {
     return (
         <ThemeContextConsumer>
             {context => (
-                <div className={`${context.theme}-theme`}
-                    style={{textAlign: 'center', padding: '20px'}}>
-                    <span style={{padding: '10px'}}>Home</span>
-                    <span style={{padding: '10px'}}>About</span>
-                    <span style={{padding: '10px'}}>Contact</span>
+                <div className={`${context.theme}-theme common`}>
+                    <span className='nav-padding'>Home</span> |
+                    <span className='nav-padding'>About</span> |
+                    <span className='nav-padding'>Contact</span>
                 </div>
             )}
         </ThemeContextConsumer>

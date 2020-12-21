@@ -6,7 +6,7 @@ function Footer() {
         <ThemeContextConsumer>
             {context => (
                 <footer className={`${context.theme}-theme`}>
-                    <div style={{textAlign: 'center', padding: '20px'}}>
+                    <div className='common'>
                         <span>The amazing Footer</span>
                     </div>
                 </footer>
