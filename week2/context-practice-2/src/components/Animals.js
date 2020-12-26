@@ -27,7 +27,8 @@ class Animals extends Component {
             <AnimalContextConsumer>
                 {context => (
                     <div>
-                        <div>
+                        <h2>Context Practice 2</h2>
+                        <div className='form'>
                             <input
                                 type='text'
                                 name='newAnimal'

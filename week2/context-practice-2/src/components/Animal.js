@@ -2,11 +2,10 @@ import React from 'react'
 
 function Animal(props) {
     return (
-        <div>
+        <div className='animal'>
             {props.animal}
         </div>
     )
-    
 }
 
 export default Animal

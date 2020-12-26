@@ -4,7 +4,7 @@ import Animals from '../components/Animals'
 
 function App() {
     return (
-        <div>
+        <div className='content'>
             <Animals />
         </div>
     )
