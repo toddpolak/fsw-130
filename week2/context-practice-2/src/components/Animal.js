@@ -1,10 +1,19 @@
 import React from 'react'
+import {AnimalContextConsumer} from '../animalContext'
 
-function Animal(props) {
+function Animal() {
     return (
-        <div className='animal'>
-            {props.animal}
-        </div>
+        <AnimalContextConsumer>
+            {context => (
+                <div>
+                    {context.animals.map((item, index) => 
+                        <div key={index} className='animal'>
+                            {item.animal}
+                        </div>
+                    )} 
+                </div>
+            )}
+        </AnimalContextConsumer>
     )
 }
 

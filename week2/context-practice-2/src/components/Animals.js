@@ -42,9 +42,7 @@ class Animals extends Component {
                                 }>Add</button>
                         </div>
                         <div>
-                            {context.animals.map((item, index) => 
-                                <Animal key={index} animal={item.animal} />
-                            )}  
+                            <Animal />
                         </div>
                     </div>
                 )}
