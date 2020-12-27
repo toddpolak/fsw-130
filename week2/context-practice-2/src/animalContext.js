@@ -29,7 +29,7 @@ class AnimalContextProvider extends Component {
             <Provider value={{
                 animals: this.state.animals,
                 addAnimal: this.addAnimal
-                }}>
+            }}>
                 {this.props.children}
             </Provider>
         )
