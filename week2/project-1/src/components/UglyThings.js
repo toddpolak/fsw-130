@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {ContextConsumer} from '../context'
+import UglyThing from './UglyThing'
 
 class UglyThings extends Component {
     constructor() {
