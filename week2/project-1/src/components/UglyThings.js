@@ -15,9 +15,9 @@ class UglyThings extends Component {
                 {context => (
                     <div>
                         {context.uglyThings.map((item, index) => 
-                            <div key={index}>
-                                {item.title}
-                            </div>
+                            <UglyThing 
+                                key={index} 
+                                title={item.title} />
                         )}
                     </div>
                 )}
