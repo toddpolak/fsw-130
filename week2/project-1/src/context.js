@@ -11,8 +11,6 @@ class ContextProvider extends Component {
             id: '',
             editTitle: ''
         }
-        //this.editUglyThing = this.editUglyThing.bind(this)
-        //this.editHandleChange = this.editHandleChange.bind(this)
     }
     
     addUglyThing = (title) => {
