@@ -13,9 +13,10 @@ class ContextProvider extends Component {
         }
     }
     
-    addUglyThing = (title) => {
+    addUglyThing = (title, image) => {
         let entry = {
-            title: title
+            title: title,
+            image: image
         }
 
         this.setState({

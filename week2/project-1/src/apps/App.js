@@ -8,7 +8,8 @@ class App extends Component {
         super()
 
         this.state = {
-            newTitle: ''
+            newTitle: '',
+            newImage: ''
         }
     }
 
@@ -19,7 +20,8 @@ class App extends Component {
 
     clearForm() {
         this.setState({
-            newTitle: ''
+            newTitle: '',
+            newImage: ''
         })
     }
 
@@ -30,15 +32,25 @@ class App extends Component {
                     <div>
                         <h2>Ugly Things</h2>
                         <div>
-                            <input
-                                type='text'
-                                name='newTitle'
-                                placeholder='Title'
-                                value={this.state.newTitle}
-                                onChange={this.entryChangeHandler}
-                            />
+                            <form>
+                                <input
+                                    type='text'
+                                    name='newTitle'
+                                    placeholder='Title'
+                                    value={this.state.newTitle}
+                                    onChange={this.entryChangeHandler}
+                                />
+                                <textarea
+                                    name='newImage'
+                                    placeholder='Image'
+                                    value={this.state.newImage}
+                                    onChange={this.entryChangeHandler}
+                                />
+                            </form>
                             <button onClick={() => {
-                                context.addUglyThing(this.state.newTitle); 
+                                context.addUglyThing(
+                                    this.state.newTitle,
+                                    this.state.newImage); 
                                 this.clearForm()}}>Add</button>
                         </div>
                         <div>

@@ -5,6 +5,7 @@ function displayRenderer(
     uglyThingId,
     id,
     title,
+    image,
     editTitle,
     editChangeHandler
     ) {
@@ -23,6 +24,7 @@ function displayRenderer(
     return (
         <div>
             {title}
+            <img src={image} alt='' />
         </div>
     )
 }
@@ -31,6 +33,7 @@ function editRenderer(
     uglyThingId,
     id,
     title,
+    image,
     editUglyThing,
     editSaveClickHandler
     ) {
@@ -64,6 +67,7 @@ function UglyThings() {
                                 index,
                                 context.id,
                                 item.title,
+                                item.image,
                                 context.editTitle,
                                 context.editChangeHandler
                             )}
@@ -71,6 +75,7 @@ function UglyThings() {
                                 index,
                                 context.id,
                                 item.title,
+                                item.image,
                                 context.editUglyThing,
                                 context.editSaveClickHandler
                             )}
