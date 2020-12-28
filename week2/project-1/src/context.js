@@ -7,10 +7,14 @@ class ContextProvider extends Component {
         super()
 
         this.state = {
-            uglyThings: []
+            uglyThings: [],
+            id: '',
+            editTitle: ''
         }
+        //this.editUglyThing = this.editUglyThing.bind(this)
+        //this.editHandleChange = this.editHandleChange.bind(this)
     }
-
+    
     addUglyThing = (title) => {
         let entry = {
             title: title
@@ -21,12 +25,27 @@ class ContextProvider extends Component {
         })
     }
 
+    editUglyThing = (uglyThingId, title) => {
+        this.setState({
+            id: uglyThingId,
+            editTitle: title
+        })
+    }
+
+    editChangeHandler = (event) => {
+        const {name, value} = event.target
+        this.setState({[name]: value})
+    }
+
     render() {
         return (
             <Provider value={{
                 uglyThings: this.state.uglyThings,
-                addUglyThing: this.addUglyThing
-            }}>
+                addUglyThing: this.addUglyThing,
+                editUglyThing: this.editUglyThing,
+                editChangeHandler: this.editChangeHandler,
+                id: this.state.id,
+                editTitle: this.state.editTitle }}>
                 {this.props.children}
             </Provider>
         )

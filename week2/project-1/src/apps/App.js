@@ -12,7 +12,7 @@ class App extends Component {
         }
     }
 
-    handleChange = (event) => {
+    entryChangeHandler = (event) => {
         const {name, value} = event.target
         this.setState({[name]: value})
     }
@@ -35,7 +35,7 @@ class App extends Component {
                                 name='newTitle'
                                 placeholder='Title'
                                 value={this.state.newTitle}
-                                onChange={this.handleChange}
+                                onChange={this.entryChangeHandler}
                             />
                             <button onClick={() => {
                                 context.addUglyThing(this.state.newTitle); 

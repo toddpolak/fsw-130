@@ -1,30 +1,26 @@
-import React, {Component} from 'react'
+import React from 'react'
 import {ContextConsumer} from '../context'
 import UglyThing from './UglyThing'
 
-class UglyThings extends Component {
-    constructor() {
-        super()
-
-        this.state = {}
-    }
-
-    render() {
-        return (
-            <ContextConsumer>
-                {context => (
-                    <div>
-                        {context.uglyThings.map((item, index) => 
-                            <UglyThing 
-                                key={index} 
-                                title={item.title} />
-                        )}
-                    </div>
-                )}
-            </ContextConsumer>
-        )
-    }
-
+function UglyThings() {
+    return (
+        <ContextConsumer>
+            {context => (
+                <div>
+                    {context.uglyThings.map((item, index) => 
+                        <UglyThing 
+                            key={index} 
+                            id={context.id}
+                            uglyThingId={index}
+                            title={item.title}
+                            editTitle={context.editTitle}
+                            editUglyThing={context.editUglyThing}
+                            editHandleChange={context.editHandleChange} />
+                    )}
+                </div>
+            )}
+        </ContextConsumer>
+    )
 }
 
 export default UglyThings
