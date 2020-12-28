@@ -38,19 +38,30 @@ class ContextProvider extends Component {
     }
 
     editSaveClickHandler = (event) => {
+
         console.log(event.target.id)
+        console.log(this.state.editTitle)
+
+        let index = event.target.id
+        let title = this.state.editTitle
+
+        let uglyThings = [...this.state.uglyThings]
+        uglyThings[index] = {...uglyThings[index], title: title}
+        this.setState({uglyThings})
+
+        this.setState({id: ''})
     }
 
     render() {
         return (
             <Provider value={{
                 uglyThings: this.state.uglyThings,
+                id: this.state.id,
+                editTitle: this.state.editTitle,
                 addUglyThing: this.addUglyThing,
                 editUglyThing: this.editUglyThing,
                 editChangeHandler: this.editChangeHandler,
-                editSaveClickHandler: this.editSaveClickHandler,
-                id: this.state.id,
-                editTitle: this.state.editTitle }}>
+                editSaveClickHandler: this.editSaveClickHandler}}>
                 {this.props.children}
             </Provider>
         )

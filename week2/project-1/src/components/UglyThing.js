@@ -53,9 +53,9 @@ function editRenderer(
 }
 
 function UglyThing(props) {
-
+    
     //console.log('props: ', props)
-
+    
     return (
         <div>
             {displayRenderer(
@@ -74,6 +74,7 @@ function UglyThing(props) {
             )}
         </div>
     )
+
 }
 
 export default UglyThing
