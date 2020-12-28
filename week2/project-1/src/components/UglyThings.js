@@ -15,7 +15,8 @@ function UglyThings() {
                             title={item.title}
                             editTitle={context.editTitle}
                             editUglyThing={context.editUglyThing}
-                            editHandleChange={context.editHandleChange} />
+                            editChangeHandler={context.editChangeHandler}
+                            editSaveClickHandler={context.editSaveClickHandler} />
                     )}
                 </div>
             )}

@@ -37,6 +37,10 @@ class ContextProvider extends Component {
         this.setState({[name]: value})
     }
 
+    editSaveClickHandler = (event) => {
+        console.log(event.target.id)
+    }
+
     render() {
         return (
             <Provider value={{
@@ -44,6 +48,7 @@ class ContextProvider extends Component {
                 addUglyThing: this.addUglyThing,
                 editUglyThing: this.editUglyThing,
                 editChangeHandler: this.editChangeHandler,
+                editSaveClickHandler: this.editSaveClickHandler,
                 id: this.state.id,
                 editTitle: this.state.editTitle }}>
                 {this.props.children}

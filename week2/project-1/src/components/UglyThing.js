@@ -14,7 +14,7 @@ function displayRenderer(
                     type='text'
                     name='editTitle'
                     value={editTitle}
-                    placeholder='title'
+                    placeholder='Enter Title'
                     onChange={editChangeHandler} />
             </div>
         )
@@ -30,11 +30,17 @@ function editRenderer(
     uglyThingId,
     id,
     title,
-    editUglyThing
+    editUglyThing,
+    editSaveClickHandler
     ) {
     if (id === uglyThingId) {
         return (
-            <div></div>
+            <div>
+                <button id={uglyThingId}
+                onClick={editSaveClickHandler}>
+                    Save
+                </button>
+            </div>
         )
     }
     return (
@@ -63,7 +69,8 @@ function UglyThing(props) {
                 props.uglyThingId,
                 props.id,
                 props.title,
-                props.editUglyThing
+                props.editUglyThing,
+                props.editSaveClickHandler
             )}
         </div>
     )
