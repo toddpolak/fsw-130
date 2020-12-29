@@ -82,7 +82,7 @@ function UglyThings() {
     return (
         <ContextConsumer>
             {context => (
-                <div>
+                <div className='common'>
                     {context.uglyThings.map((item, index) => 
                         <div key={index}>
                             {displayRenderer(

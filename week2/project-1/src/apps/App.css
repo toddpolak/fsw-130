@@ -12,3 +12,11 @@ img {
     width: 25%;
     height: auto;
 }
+
+form {
+    padding: 20px;
+}
+
+.common {
+    border: 1px solid black;
+}

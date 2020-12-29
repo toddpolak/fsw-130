@@ -31,7 +31,7 @@ class App extends Component {
         return (
             <ContextConsumer>
                 {context => (
-                    <div>
+                    <div className='common'>
                         <h2>Ugly Things</h2>
                         <div>
                             <form>
