@@ -9,6 +9,7 @@ class App extends Component {
 
         this.state = {
             newTitle: '',
+            newDescription: '',
             newImage: ''
         }
     }
@@ -21,7 +22,8 @@ class App extends Component {
     clearForm() {
         this.setState({
             newTitle: '',
-            newImage: ''
+            newImage: '',
+            newDescription: ''
         })
     }
 
@@ -33,19 +35,23 @@ class App extends Component {
                         <h2>Ugly Things</h2>
                         <div>
                             <form>
-                                <input
-                                    type='text'
-                                    name='newTitle'
-                                    placeholder='Title'
-                                    value={this.state.newTitle}
-                                    onChange={this.entryChangeHandler}
-                                />
-                                <textarea
-                                    name='newImage'
-                                    placeholder='Image'
-                                    value={this.state.newImage}
-                                    onChange={this.entryChangeHandler}
-                                />
+                                <div>
+                                    <input
+                                        type='text'
+                                        name='newTitle'
+                                        placeholder='Title'
+                                        value={this.state.newTitle}
+                                        onChange={this.entryChangeHandler}
+                                    />
+                                </div>
+                                <div>
+                                    <textarea
+                                        name='newImage'
+                                        placeholder='Image'
+                                        value={this.state.newImage}
+                                        onChange={this.entryChangeHandler}
+                                    />
+                                </div>
                             </form>
                             <button onClick={() => {
                                 context.addUglyThing(

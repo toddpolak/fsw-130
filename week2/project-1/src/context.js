@@ -9,14 +9,16 @@ class ContextProvider extends Component {
         this.state = {
             uglyThings: [],
             id: '',
-            editTitle: ''
+            editTitle: '',
+            newComment: ''
         }
     }
     
     addUglyThing = (title, image) => {
         let entry = {
             title: title,
-            image: image
+            image: image,
+            comments: []
         }
 
         this.setState({
@@ -37,18 +39,28 @@ class ContextProvider extends Component {
     }
 
     editSaveClickHandler = (event) => {
-
-        console.log(event.target.id)
-        console.log(this.state.editTitle)
-
         let index = event.target.id
         let title = this.state.editTitle
-
         let uglyThings = [...this.state.uglyThings]
-        uglyThings[index] = {...uglyThings[index], title: title}
-        this.setState({uglyThings})
 
+        uglyThings[index] = {...uglyThings[index], title: title}
+
+        this.setState({uglyThings})
         this.setState({id: ''})
+    }
+
+    commentChangeHandler = (event) => {
+        const {name, value} = event.target
+        this.setState({[name]: value})
+    }
+
+    addComment = (uglyThingId, comment) => {
+        let uglyThings = [...this.state.uglyThings]
+
+        uglyThings[uglyThingId].comments.push(comment)
+
+        this.setState({uglyThings})
+        this.setState({newComment: ''})
     }
 
     render() {
@@ -57,10 +69,14 @@ class ContextProvider extends Component {
                 uglyThings: this.state.uglyThings,
                 id: this.state.id,
                 editTitle: this.state.editTitle,
+                newComment: this.state.newComment,
                 addUglyThing: this.addUglyThing,
                 editUglyThing: this.editUglyThing,
                 editChangeHandler: this.editChangeHandler,
-                editSaveClickHandler: this.editSaveClickHandler}}>
+                editSaveClickHandler: this.editSaveClickHandler,
+                commentChangeHandler: this.commentChangeHandler,
+                addComment: this.addComment
+            }}>
                 {this.props.children}
             </Provider>
         )

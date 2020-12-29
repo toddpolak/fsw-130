@@ -6,8 +6,12 @@ function displayRenderer(
     id,
     title,
     image,
+    comments,
     editTitle,
-    editChangeHandler
+    editChangeHandler,
+    newComment,
+    commentChangeHandler,
+    addComment
     ) {
     if (id === uglyThingId) {
         return (
@@ -23,8 +27,26 @@ function displayRenderer(
     }
     return (
         <div>
-            {title}
-            <img src={image} alt='' />
+            <div>
+                {title}
+                <img src={image} alt='' />
+                {comments.map((item, index) => 
+                    <div key={index}>
+                        {item}
+                    </div>
+                )}
+            </div>
+            <div>
+                <input
+                    type='text'
+                    name='newComment'
+                    value={newComment}
+                    placeholder='Enter Comment'
+                    onChange={commentChangeHandler} />
+                <button onClick={() => addComment(uglyThingId, newComment)}>
+                    Add Comment
+                </button>
+            </div>
         </div>
     )
 }
@@ -68,8 +90,12 @@ function UglyThings() {
                                 context.id,
                                 item.title,
                                 item.image,
+                                item.comments,
                                 context.editTitle,
-                                context.editChangeHandler
+                                context.editChangeHandler,
+                                context.newComment,
+                                context.commentChangeHandler,
+                                context.addComment
                             )}
                             {editRenderer(
                                 index,

@@ -1,12 +1,14 @@
 textarea {
     resize: none;
     overflow: hidden;
+    /*
     border: 0px none;
+    */
     height: 40px;
     width: 400px;
 }
 
 img {
-    width: 50%;
+    width: 25%;
     height: auto;
 }
