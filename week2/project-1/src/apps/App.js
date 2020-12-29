@@ -8,12 +8,15 @@ class App extends Component {
         super()
 
         this.state = {
+            /*
             newTitle: '',
             newDescription: '',
             newImage: ''
+            */
         }
     }
 
+    /*
     entryChangeHandler = (event) => {
         const {name, value} = event.target
         this.setState({[name]: value})
@@ -26,6 +29,7 @@ class App extends Component {
             newDescription: ''
         })
     }
+    */
 
     render() {
         return (
@@ -40,24 +44,23 @@ class App extends Component {
                                         type='text'
                                         name='newTitle'
                                         placeholder='Title'
-                                        value={this.state.newTitle}
-                                        onChange={this.entryChangeHandler}
+                                        value={context.newTitle}
+                                        onChange={context.entryChangeHandler}
                                     />
                                 </div>
                                 <div>
                                     <textarea
                                         name='newImage'
                                         placeholder='Image'
-                                        value={this.state.newImage}
-                                        onChange={this.entryChangeHandler}
+                                        value={context.newImage}
+                                        onChange={context.entryChangeHandler}
                                     />
                                 </div>
                             </form>
                             <button onClick={() => {
                                 context.addUglyThing(
-                                    this.state.newTitle,
-                                    this.state.newImage); 
-                                this.clearForm()}}>Add</button>
+                                    context.newTitle,
+                                    context.newImage)}}>Add</button>
                         </div>
                         <div>
                             <UglyThings />

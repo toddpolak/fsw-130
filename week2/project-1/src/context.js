@@ -9,9 +9,17 @@ class ContextProvider extends Component {
         this.state = {
             uglyThings: [],
             id: '',
-            editTitle: '',
-            newComment: ''
+            newTitle: '',
+            newDescription: '',
+            newImage: '',
+            newComment: '',
+            editTitle: ''
         }
+    }
+
+    entryChangeHandler = (event) => {
+        const {name, value} = event.target
+        this.setState({[name]: value})
     }
     
     addUglyThing = (title, image) => {
@@ -23,6 +31,12 @@ class ContextProvider extends Component {
 
         this.setState({
             uglyThings: [...this.state.uglyThings, entry]
+        })
+
+        this.setState({
+            newTitle: '',
+            newImage: '',
+            newDescription: ''
         })
     }
 
@@ -68,8 +82,12 @@ class ContextProvider extends Component {
             <Provider value={{
                 uglyThings: this.state.uglyThings,
                 id: this.state.id,
+                newTitle: this.state.newTitle,
+                newDescription: this.state.newDescription,
+                newImage: this.state.newImage,
                 editTitle: this.state.editTitle,
                 newComment: this.state.newComment,
+                entryChangeHandler: this.entryChangeHandler,
                 addUglyThing: this.addUglyThing,
                 editUglyThing: this.editUglyThing,
                 editChangeHandler: this.editChangeHandler,
