@@ -71,12 +71,12 @@ class ContextProvider extends Component {
     addComment = (uglyThingId) => {
         let uglyThings = [...this.state.uglyThings]
 
-        //uglyThings[uglyThingId].comments.push(comment)
-
         uglyThings[uglyThingId].comments.push(this.state.comment)
 
         this.setState({uglyThings})
         this.setState({comment: ''})
+
+        document.getElementById(`comments${uglyThingId}`).value = ''
     }
 
     render() {

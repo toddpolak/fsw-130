@@ -9,7 +9,6 @@ function displayRenderer(
     comments,
     editTitle,
     editChangeHandler,
-    comment,
     commentChangeHandler,
     addComment
     ) {
@@ -40,7 +39,7 @@ function displayRenderer(
                 <input
                     type='text'
                     name='comment'
-                    /*value={comment}*/
+                    id={`comments${uglyThingId}`}
                     placeholder='Enter Comment'
                     onChange={commentChangeHandler} />
                 <button onClick={() => addComment(uglyThingId)}>
