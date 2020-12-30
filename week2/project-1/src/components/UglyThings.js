@@ -9,7 +9,7 @@ function displayRenderer(
     comments,
     editTitle,
     editChangeHandler,
-    newComment,
+    comment,
     commentChangeHandler,
     addComment
     ) {
@@ -39,11 +39,11 @@ function displayRenderer(
             <div>
                 <input
                     type='text'
-                    name='newComment'
-                    value={newComment}
+                    name='comment'
+                    /*value={comment}*/
                     placeholder='Enter Comment'
                     onChange={commentChangeHandler} />
-                <button onClick={() => addComment(uglyThingId, newComment)}>
+                <button onClick={() => addComment(uglyThingId)}>
                     Add Comment
                 </button>
             </div>
@@ -93,7 +93,7 @@ function UglyThings() {
                                 item.comments,
                                 context.editTitle,
                                 context.editChangeHandler,
-                                context.newComment,
+                                context.comment,
                                 context.commentChangeHandler,
                                 context.addComment
                             )}

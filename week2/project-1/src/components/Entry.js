@@ -5,33 +5,30 @@ function Entry() {
     return (
         <ContextConsumer>
             {context => (
-                <div className='common'>
-                    <h2>Ugly Things</h2>
-                    <div>
-                        <form>
-                            <div>
-                                <input
-                                    type='text'
-                                    name='newTitle'
-                                    placeholder='Title'
-                                    value={context.newTitle}
-                                    onChange={context.entryChangeHandler}
-                                />
-                            </div>
-                            <div>
-                                <textarea
-                                    name='newImage'
-                                    placeholder='Image'
-                                    value={context.newImage}
-                                    onChange={context.entryChangeHandler}
-                                />
-                            </div>
-                        </form>
-                        <button onClick={() => {
-                            context.addUglyThing(
-                                context.newTitle,
-                                context.newImage)}}>Add</button>
-                    </div>
+                <div>
+                    <form>
+                        <div>
+                            <input
+                                type='text'
+                                name='title'
+                                placeholder='Title'
+                                value={context.title}
+                                onChange={context.entryChangeHandler}
+                            />
+                        </div>
+                        <div>
+                            <textarea
+                                name='image'
+                                placeholder='Image'
+                                value={context.image}
+                                onChange={context.entryChangeHandler}
+                            />
+                        </div>
+                    </form>
+                    <button onClick={() => {
+                        context.addUglyThing(
+                            context.title,
+                            context.image)}}>Add</button>
                 </div>
             )}
         </ContextConsumer>

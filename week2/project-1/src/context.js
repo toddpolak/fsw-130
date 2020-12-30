@@ -9,10 +9,10 @@ class ContextProvider extends Component {
         this.state = {
             uglyThings: [],
             id: '',
-            newTitle: '',
-            newDescription: '',
-            newImage: '',
-            newComment: '',
+            title: '',
+            description: '',
+            image: '',
+            comment: '',
             editTitle: ''
         }
     }
@@ -34,9 +34,9 @@ class ContextProvider extends Component {
         })
 
         this.setState({
-            newTitle: '',
-            newImage: '',
-            newDescription: ''
+            title: '',
+            image: '',
+            description: ''
         })
     }
 
@@ -68,13 +68,15 @@ class ContextProvider extends Component {
         this.setState({[name]: value})
     }
 
-    addComment = (uglyThingId, comment) => {
+    addComment = (uglyThingId) => {
         let uglyThings = [...this.state.uglyThings]
 
-        uglyThings[uglyThingId].comments.push(comment)
+        //uglyThings[uglyThingId].comments.push(comment)
+
+        uglyThings[uglyThingId].comments.push(this.state.comment)
 
         this.setState({uglyThings})
-        this.setState({newComment: ''})
+        this.setState({comment: ''})
     }
 
     render() {
@@ -82,11 +84,11 @@ class ContextProvider extends Component {
             <Provider value={{
                 uglyThings: this.state.uglyThings,
                 id: this.state.id,
-                newTitle: this.state.newTitle,
-                newDescription: this.state.newDescription,
-                newImage: this.state.newImage,
+                title: this.state.title,
+                description: this.state.description,
+                image: this.state.image,
+                comment: this.state.comment,
                 editTitle: this.state.editTitle,
-                newComment: this.state.newComment,
                 entryChangeHandler: this.entryChangeHandler,
                 addUglyThing: this.addUglyThing,
                 editUglyThing: this.editUglyThing,
