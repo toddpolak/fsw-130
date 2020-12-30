@@ -92,7 +92,6 @@ function UglyThings() {
                                 item.comments,
                                 context.editTitle,
                                 context.editChangeHandler,
-                                context.comment,
                                 context.commentChangeHandler,
                                 context.addComment
                             )}
