@@ -59,13 +59,20 @@ class ContextProvider extends Component {
 
     editSaveClickHandler = (event) => {
         let index = event.target.id
-        let title = this.state.editTitle
         let uglyThings = [...this.state.uglyThings]
 
-        uglyThings[index] = {...uglyThings[index], title: title}
+        uglyThings[index] = {...uglyThings[index], 
+            title: this.state.editTitle,
+            description: this.state.editDescription,
+            image: this.state.editImage
+        }
 
         this.setState({uglyThings})
         this.setState({id: ''})
+    }
+
+    deleteUglyThing = (event) => {
+
     }
 
     commentChangeHandler = (event) => {
@@ -82,6 +89,10 @@ class ContextProvider extends Component {
         this.setState({comment: ''})
 
         document.getElementById(`comments${uglyThingId}`).value = ''
+    }
+
+    deleteComment = (event) => {
+
     }
 
     render() {
@@ -101,8 +112,10 @@ class ContextProvider extends Component {
                 editUglyThing: this.editUglyThing,
                 editChangeHandler: this.editChangeHandler,
                 editSaveClickHandler: this.editSaveClickHandler,
+                deleteUglyThing: this.deleteUglyThing,
                 commentChangeHandler: this.commentChangeHandler,
-                addComment: this.addComment
+                addComment: this.addComment,
+                deleteComment: this.deleteComment
             }}>
                 {this.props.children}
             </Provider>

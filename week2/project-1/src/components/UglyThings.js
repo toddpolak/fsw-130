@@ -59,7 +59,8 @@ function displayRenderer(
                     id={`comments${uglyThingId}`}
                     placeholder='Enter Comment'
                     onChange={commentChangeHandler} />
-                <button onClick={() => addComment(uglyThingId)}>
+                <button id={uglyThingId}
+                    onClick={() => addComment(uglyThingId)}>
                     Add Comment
                 </button>
                 {comments.map((item, index) => 
@@ -79,7 +80,8 @@ function editRenderer(
     description,
     image,
     editUglyThing,
-    editSaveClickHandler
+    editSaveClickHandler,
+    deleteUglyThing
     ) {
     if (id === uglyThingId) {
         return (
@@ -93,14 +95,23 @@ function editRenderer(
     }
     return (
         <div>
-            <button onClick={() => editUglyThing(
-                uglyThingId, 
-                title,
-                description,
-                image)}>
-                Edit
-            </button>
+            <div>
+                <button onClick={() => editUglyThing(
+                    uglyThingId, 
+                    title,
+                    description,
+                    image)}>
+                    Edit
+                </button>
+            </div>
+            <div>
+                <button id={uglyThingId}
+                    onClick={() => deleteUglyThing}>
+                    Delete
+                </button>
+            </div>
         </div>
+        
     )
 }
 
@@ -118,7 +129,8 @@ function UglyThings() {
                                 item.description,
                                 item.image,
                                 context.editUglyThing,
-                                context.editSaveClickHandler
+                                context.editSaveClickHandler,
+                                context.deleteUglyThing
                             )}
                             {displayRenderer(
                                 index,
