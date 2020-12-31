@@ -5,30 +5,42 @@ function Entry() {
     return (
         <ContextConsumer>
             {context => (
-                <div>
+
+
+                <div className='common'>
+
                     <form>
-                        <div>
+
+                        <div className='form-input'>
                             <input
                                 type='text'
                                 name='title'
-                                placeholder='Title'
+                                placeholder='Enter Title'
                                 value={context.title}
-                                onChange={context.entryChangeHandler}
-                            />
+                                onChange={context.entryChangeHandler} />
                         </div>
-                        <div>
+
+                        <div className='form-input'>
+                            <textarea
+                                name='description'
+                                placeholder='Enter Description'
+                                value={context.description}
+                                onChange={context.entryChangeHandler} />
+                        </div>
+                        
+                        <div className='form-input'>
                             <textarea
                                 name='image'
-                                placeholder='Image'
+                                placeholder='Image URL'
                                 value={context.image}
-                                onChange={context.entryChangeHandler}
-                            />
+                                onChange={context.entryChangeHandler} />
                         </div>
+
+
                     </form>
+
                     <button onClick={() => {
-                        context.addUglyThing(
-                            context.title,
-                            context.image)}}>Add</button>
+                        context.addUglyThing()}}>Add</button>
                 </div>
             )}
         </ContextConsumer>

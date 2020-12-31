@@ -13,7 +13,9 @@ class ContextProvider extends Component {
             description: '',
             image: '',
             comment: '',
-            editTitle: ''
+            editTitle: '',
+            editDescription: '',
+            editImage: ''
         }
     }
 
@@ -22,10 +24,11 @@ class ContextProvider extends Component {
         this.setState({[name]: value})
     }
     
-    addUglyThing = (title, image) => {
+    addUglyThing = () => {
         let entry = {
-            title: title,
-            image: image,
+            title: this.state.title,
+            description: this.state.description,
+            image: this.state.image,
             comments: []
         }
 
@@ -40,10 +43,12 @@ class ContextProvider extends Component {
         })
     }
 
-    editUglyThing = (uglyThingId, title) => {
+    editUglyThing = (uglyThingId, title, description, image) => {
         this.setState({
             id: uglyThingId,
-            editTitle: title
+            editTitle: title,
+            editDescription: description,
+            editImage: image
         })
     }
 
@@ -89,6 +94,8 @@ class ContextProvider extends Component {
                 image: this.state.image,
                 comment: this.state.comment,
                 editTitle: this.state.editTitle,
+                editDescription: this.state.editDescription,
+                editImage: this.state.editImage,
                 entryChangeHandler: this.entryChangeHandler,
                 addUglyThing: this.addUglyThing,
                 editUglyThing: this.editUglyThing,

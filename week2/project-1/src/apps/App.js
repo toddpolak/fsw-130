@@ -5,8 +5,10 @@ import UglyThings from '../components/UglyThings'
 
 function App() {
     return (
-        <div>
-            <h2>Ugly Things</h2>
+        <div className='content'>
+            <div className='heading'>
+                <h2>Ugly Things</h2>
+            </div>
             <Entry />
             <UglyThings />
         </div>
