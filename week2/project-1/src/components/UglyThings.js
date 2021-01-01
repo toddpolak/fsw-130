@@ -1,19 +1,21 @@
 import React from 'react'
 import {ContextConsumer} from '../context'
+import delete_img from '../img/delete.png'
 
 function displayRenderer(
     uglyThingId,
-    id,
     title,
     description,
     image,
     comments,
+    id,
     editTitle,
     editDescription,
     editImage,
     editChangeHandler,
     commentChangeHandler,
-    addComment
+    addComment,
+    deleteComment
     ) {
     if (id === uglyThingId) {
         return (
@@ -66,6 +68,11 @@ function displayRenderer(
                 {comments.map((item, index) => 
                     <div key={index}>
                         {item}
+                        <img 
+                            src={delete_img} 
+                            className='delete-img' 
+                            alt='' 
+                            onClick={() => deleteComment(index, uglyThingId)} />
                     </div>
                 )}
             </div>
@@ -75,10 +82,10 @@ function displayRenderer(
 
 function editRenderer(
     uglyThingId,
-    id,
     title,
     description,
     image,
+    id,
     editUglyThing,
     editSaveClickHandler,
     deleteUglyThing
@@ -103,8 +110,6 @@ function editRenderer(
                     image)}>
                     Edit
                 </button>
-            </div>
-            <div>
                 <button id={uglyThingId}
                     onClick={deleteUglyThing}>
                     Delete
@@ -124,27 +129,28 @@ function UglyThings() {
                         <div key={index}>
                             {editRenderer(
                                 index,
-                                context.id,
                                 item.title,
                                 item.description,
                                 item.image,
+                                context.id,
                                 context.editUglyThing,
                                 context.editSaveClickHandler,
                                 context.deleteUglyThing
                             )}
                             {displayRenderer(
                                 index,
-                                context.id,
                                 item.title,
                                 item.description,
                                 item.image,
                                 item.comments,
+                                context.id,
                                 context.editTitle,
                                 context.editDescription,
                                 context.editImage,
                                 context.editChangeHandler,
                                 context.commentChangeHandler,
-                                context.addComment
+                                context.addComment,
+                                context.deleteComment
                             )}
                         </div>
                     )}

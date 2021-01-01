@@ -5,12 +5,8 @@ function Entry() {
     return (
         <ContextConsumer>
             {context => (
-
-
                 <div className='common'>
-
                     <form>
-
                         <div className='form-input'>
                             <input
                                 type='text'
@@ -19,7 +15,6 @@ function Entry() {
                                 value={context.title}
                                 onChange={context.entryChangeHandler} />
                         </div>
-
                         <div className='form-input'>
                             <textarea
                                 name='description'
@@ -27,7 +22,6 @@ function Entry() {
                                 value={context.description}
                                 onChange={context.entryChangeHandler} />
                         </div>
-                        
                         <div className='form-input'>
                             <textarea
                                 name='image'
@@ -35,10 +29,7 @@ function Entry() {
                                 value={context.image}
                                 onChange={context.entryChangeHandler} />
                         </div>
-
-
                     </form>
-
                     <button onClick={() => {
                         context.addUglyThing()}}>Add</button>
                 </div>

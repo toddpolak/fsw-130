@@ -97,8 +97,11 @@ class ContextProvider extends Component {
         document.getElementById(`comments${uglyThingId}`).value = ''
     }
 
-    deleteComment = (event) => {
+    deleteComment = (index, uglyThingId) => {
+        let uglyThings = [...this.state.uglyThings]
 
+        console.log(uglyThings[uglyThingId].comments)
+        console.log(index)
     }
 
     render() {
