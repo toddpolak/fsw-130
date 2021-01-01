@@ -22,7 +22,7 @@ body {
 }
 
 .common {
-    border: 3px solid pink;
+    border: 2px solid gray;
     padding: 20px;
 }
 
@@ -55,7 +55,7 @@ img {
 }
 
 .delete-img {
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     cursor: pointer;
 }

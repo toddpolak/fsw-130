@@ -100,8 +100,12 @@ class ContextProvider extends Component {
     deleteComment = (index, uglyThingId) => {
         let uglyThings = [...this.state.uglyThings]
 
+        uglyThings[uglyThingId].comments.splice(index, 1)
+
         console.log(uglyThings[uglyThingId].comments)
         console.log(index)
+
+        this.setState({uglyThings})
     }
 
     render() {

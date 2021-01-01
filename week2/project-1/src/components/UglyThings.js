@@ -1,6 +1,6 @@
 import React from 'react'
 import {ContextConsumer} from '../context'
-import delete_img from '../img/delete.png'
+import delete_img from '../img/delete.jpg'
 
 function displayRenderer(
     uglyThingId,
@@ -67,12 +67,12 @@ function displayRenderer(
                 </button>
                 {comments.map((item, index) => 
                     <div key={index}>
-                        {item}
                         <img 
                             src={delete_img} 
                             className='delete-img' 
                             alt='' 
                             onClick={() => deleteComment(index, uglyThingId)} />
+                            {item}
                     </div>
                 )}
             </div>
