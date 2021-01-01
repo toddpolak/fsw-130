@@ -60,7 +60,7 @@ function displayRenderer(
                     placeholder='Enter Comment'
                     onChange={commentChangeHandler} />
                 <button id={uglyThingId}
-                    onClick={() => addComment(uglyThingId)}>
+                    onClick={addComment}>
                     Add Comment
                 </button>
                 {comments.map((item, index) => 
@@ -106,7 +106,7 @@ function editRenderer(
             </div>
             <div>
                 <button id={uglyThingId}
-                    onClick={() => deleteUglyThing}>
+                    onClick={deleteUglyThing}>
                     Delete
                 </button>
             </div>

@@ -58,10 +58,10 @@ class ContextProvider extends Component {
     }
 
     editSaveClickHandler = (event) => {
-        let index = event.target.id
+        let uglyThingId = event.target.id
         let uglyThings = [...this.state.uglyThings]
 
-        uglyThings[index] = {...uglyThings[index], 
+        uglyThings[uglyThingId] = {...uglyThings[uglyThingId], 
             title: this.state.editTitle,
             description: this.state.editDescription,
             image: this.state.editImage
@@ -72,7 +72,12 @@ class ContextProvider extends Component {
     }
 
     deleteUglyThing = (event) => {
+        let uglyThingId = event.target.id
+        let uglyThings = [...this.state.uglyThings]
 
+        uglyThings.splice(uglyThingId, 1)
+
+        this.setState({uglyThings})
     }
 
     commentChangeHandler = (event) => {
@@ -80,7 +85,8 @@ class ContextProvider extends Component {
         this.setState({[name]: value})
     }
 
-    addComment = (uglyThingId) => {
+    addComment = (event) => {
+        let uglyThingId = event.target.id
         let uglyThings = [...this.state.uglyThings]
 
         uglyThings[uglyThingId].comments.push(this.state.comment)
