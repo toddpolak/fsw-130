@@ -5,7 +5,7 @@ function Entry() {
     return (
         <ContextConsumer>
             {context => (
-                <div className='common'>
+                <div className='common form-content'>
                     <form>
                         <div className='form-input'>
                             <input
@@ -30,8 +30,10 @@ function Entry() {
                                 onChange={context.entryChangeHandler} />
                         </div>
                     </form>
-                    <button onClick={() => {
-                        context.addUglyThing()}}>Add</button>
+                    <div className='form-btn'>
+                        <button onClick={() => {
+                            context.addUglyThing()}}>Add</button>
+                    </div>
                 </div>
             )}
         </ContextConsumer>

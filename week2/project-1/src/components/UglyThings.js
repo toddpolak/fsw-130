@@ -48,25 +48,25 @@ function displayRenderer(
     return (
         <div>
             <div>
-                <div style={{border: '1px solid red'}}>
-                    <div>{title}</div>
-                    <div>{description}</div>
+                <div className='common'>
+                    <h4>{title}</h4>
+                    <div className='txt-display'>{description}</div>
                     <img src={image} alt='' />
                 </div>
             </div>
-            <div style={{border: '1px solid blue'}}>
+            <div>
                 <input
                     type='text'
                     name='comment'
-                    id={`comments${uglyThingId}`}
+                    id={`comment${uglyThingId}`}
                     placeholder='Enter Comment'
                     onChange={commentChangeHandler} />
                 <button id={uglyThingId}
                     onClick={addComment}>
-                    Add Comment
+                    Add
                 </button>
                 {comments.map((item, index) => 
-                    <div key={index}>
+                    <div key={index} className='txt-display'>
                         <img 
                             src={delete_img} 
                             className='delete-img' 
@@ -102,21 +102,20 @@ function editRenderer(
     }
     return (
         <div>
-            <div>
-                <button onClick={() => editUglyThing(
-                    uglyThingId, 
-                    title,
-                    description,
-                    image)}>
-                    Edit
-                </button>
-                <button id={uglyThingId}
-                    onClick={deleteUglyThing}>
-                    Delete
-                </button>
+            <div className='common'>
+                    <button onClick={() => editUglyThing(
+                        uglyThingId, 
+                        title,
+                        description,
+                        image)}>
+                        Edit
+                    </button>
+                    <button id={uglyThingId}
+                        onClick={deleteUglyThing}>
+                        Delete
+                    </button>
             </div>
         </div>
-        
     )
 }
 

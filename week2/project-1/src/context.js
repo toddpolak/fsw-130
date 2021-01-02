@@ -58,7 +58,7 @@ class ContextProvider extends Component {
     }
 
     editSaveClickHandler = (event) => {
-        let uglyThingId = event.target.id
+        const uglyThingId = event.target.id
         let uglyThings = [...this.state.uglyThings]
 
         uglyThings[uglyThingId] = {...uglyThings[uglyThingId], 
@@ -72,7 +72,7 @@ class ContextProvider extends Component {
     }
 
     deleteUglyThing = (event) => {
-        let uglyThingId = event.target.id
+        const uglyThingId = event.target.id
         let uglyThings = [...this.state.uglyThings]
 
         uglyThings.splice(uglyThingId, 1)
@@ -81,29 +81,42 @@ class ContextProvider extends Component {
     }
 
     commentChangeHandler = (event) => {
+
+        const uglyThingId = event.target.id
+
+        console.log(uglyThingId)
+
+        const txtComment = document.getElementById(`comment${uglyThingId}`)
+
+
+        
+        //console.log('txtComment.value: ', txtComment.value)
+        //console.log('event.target.value: ', event.target.value)
+
         const {name, value} = event.target
+
         this.setState({[name]: value})
     }
 
     addComment = (event) => {
-        let uglyThingId = event.target.id
+        const uglyThingId = event.target.id
+        const txtComment = document.getElementById(`comment${uglyThingId}`)
         let uglyThings = [...this.state.uglyThings]
+        
+        if (txtComment.value !== '') { //&& txtComment.value === this.state.comment) {
+            uglyThings[uglyThingId].comments.push(this.state.comment)
 
-        uglyThings[uglyThingId].comments.push(this.state.comment)
+            this.setState({uglyThings})
+            this.setState({comment: ''})
+        }
 
-        this.setState({uglyThings})
-        this.setState({comment: ''})
-
-        document.getElementById(`comments${uglyThingId}`).value = ''
+        txtComment.value = ''
     }
 
     deleteComment = (index, uglyThingId) => {
         let uglyThings = [...this.state.uglyThings]
 
         uglyThings[uglyThingId].comments.splice(index, 1)
-
-        console.log(uglyThings[uglyThingId].comments)
-        console.log(index)
 
         this.setState({uglyThings})
     }
