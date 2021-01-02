@@ -66,13 +66,17 @@ function displayRenderer(
                     Add
                 </button>
                 {comments.map((item, index) => 
-                    <div key={index} className='txt-display'>
-                        <img 
-                            src={delete_img} 
-                            className='delete-img' 
-                            alt='' 
-                            onClick={() => deleteComment(index, uglyThingId)} />
+                    <div key={index} className='txt-display comment'>
+                        <div className='comment-text'>
                             {item}
+                        </div>
+                        <div className='comment-delete'>
+                            <img 
+                                src={delete_img} 
+                                className='delete-img' 
+                                alt='' 
+                                onClick={() => deleteComment(index, uglyThingId)} />
+                        </div>
                     </div>
                 )}
             </div>
@@ -92,28 +96,34 @@ function editRenderer(
     ) {
     if (id === uglyThingId) {
         return (
-            <div>
-                <button id={uglyThingId}
-                    onClick={editSaveClickHandler}>
-                    Save
-                </button>
+            <div className='common edit-renderer'>
+                <div className='edit-renderer-btn'>
+                    <button id={uglyThingId}
+                        onClick={editSaveClickHandler}>
+                        Save
+                    </button>
+                </div>
             </div>
         )
     }
     return (
         <div>
-            <div className='common'>
-                    <button onClick={() => editUglyThing(
-                        uglyThingId, 
-                        title,
-                        description,
-                        image)}>
-                        Edit
-                    </button>
-                    <button id={uglyThingId}
-                        onClick={deleteUglyThing}>
-                        Delete
-                    </button>
+            <div className='common edit-renderer'>
+                    <div className='edit-renderer-btn'>
+                        <button onClick={() => editUglyThing(
+                            uglyThingId, 
+                            title,
+                            description,
+                            image)}>
+                            Edit
+                        </button>
+                    </div>
+                    <div className='edit-renderer-btn'>
+                        <button id={uglyThingId}
+                            onClick={deleteUglyThing}>
+                            Delete
+                        </button>
+                    </div>
             </div>
         </div>
     )

@@ -81,20 +81,7 @@ class ContextProvider extends Component {
     }
 
     commentChangeHandler = (event) => {
-
-        const uglyThingId = event.target.id
-
-        console.log(uglyThingId)
-
-        const txtComment = document.getElementById(`comment${uglyThingId}`)
-
-
-        
-        //console.log('txtComment.value: ', txtComment.value)
-        //console.log('event.target.value: ', event.target.value)
-
         const {name, value} = event.target
-
         this.setState({[name]: value})
     }
 
@@ -103,13 +90,12 @@ class ContextProvider extends Component {
         const txtComment = document.getElementById(`comment${uglyThingId}`)
         let uglyThings = [...this.state.uglyThings]
         
-        if (txtComment.value !== '') { //&& txtComment.value === this.state.comment) {
+        if (txtComment.value !== '' && txtComment.value === this.state.comment) {
             uglyThings[uglyThingId].comments.push(this.state.comment)
 
             this.setState({uglyThings})
             this.setState({comment: ''})
         }
-
         txtComment.value = ''
     }
 

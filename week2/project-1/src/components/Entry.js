@@ -32,7 +32,7 @@ function Entry() {
                     </form>
                     <div className='form-btn'>
                         <button onClick={() => {
-                            context.addUglyThing()}}>Add</button>
+                            context.addUglyThing()}}>Add Ugly Thing</button>
                     </div>
                 </div>
             )}

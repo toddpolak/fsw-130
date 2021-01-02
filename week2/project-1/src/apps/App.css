@@ -24,12 +24,10 @@ body {
 
 .common {
     padding: 10px;
-    border: 1px solid black;
 }
 
 .txt-display {
     padding: 5px;
-    border: 1px solid red;
 }
 
 .form-input {
@@ -45,7 +43,7 @@ form {
 }
 
 .form-content {
-    width: 300px;
+    width: 302px;
     margin: auto;
 }
 
@@ -67,6 +65,31 @@ input[name="title"] {
 
 input[name="comment"] {
     width: 150px;
+}
+
+.edit-renderer {
+    text-align: center;
+    background-color: rgb(224, 222, 217);
+    border: 1px solid black;
+}
+
+.edit-renderer-btn {
+    display: inline;
+    padding: 5px;
+}
+
+.comment {
+    width: 185px;
+}
+
+.comment-text {
+    display: inline-block;
+    width: 150px;
+}
+
+.comment-delete {
+    display: block;
+    float: right;
 }
 
 img {
