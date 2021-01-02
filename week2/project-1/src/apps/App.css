@@ -70,10 +70,14 @@ input[name="comment"] {
     width: 150px;
 }
 
+/*
+.comment-input {
+    width: 150px;
+}
+*/
+
 .edit-renderer {
     text-align: center;
-    background-color: rgb(224, 222, 217);
-    border: 1px solid black;
 }
 
 .edit-renderer-btn {

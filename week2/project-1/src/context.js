@@ -79,23 +79,25 @@ class ContextProvider extends Component {
 
         this.setState({uglyThings})
     }
-
+    /*
     commentChangeHandler = (event) => {
         const {name, value} = event.target
         this.setState({[name]: value})
     }
-
+    */
     addComment = (event) => {
         const uglyThingId = event.target.id
         const txtComment = document.getElementById(`comment${uglyThingId}`)
         let uglyThings = [...this.state.uglyThings]
-        
-        if (txtComment.value !== '' && txtComment.value === this.state.comment) {
-            uglyThings[uglyThingId].comments.push(this.state.comment)
+
+        //if (txtComment.value !== '' && txtComment.value === this.state.comment) {
+            //uglyThings[uglyThingId].comments.push(this.state.comment)
+            uglyThings[uglyThingId].comments.push(txtComment.value)
 
             this.setState({uglyThings})
-            this.setState({comment: ''})
-        }
+            //this.setState({comment: ''})
+        //}
+
         txtComment.value = ''
     }
 
