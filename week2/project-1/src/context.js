@@ -12,7 +12,10 @@ class ContextProvider extends Component {
             title: '',
             description: '',
             image: '',
+
             comment: '',
+            enteredComments: [],
+
             editTitle: '',
             editDescription: '',
             editImage: ''
@@ -79,26 +82,38 @@ class ContextProvider extends Component {
 
         this.setState({uglyThings})
     }
-    /*
+    
     commentChangeHandler = (event) => {
+
         const {name, value} = event.target
+
+        console.log('name: ', name)
+        console.log('value: ', value)
+
+        let entry = {
+            name: name,
+            value: value
+        }
+
+        console.log('entry: ', entry)
+
         this.setState({[name]: value})
     }
-    */
+    
     addComment = (event) => {
         const uglyThingId = event.target.id
-        const txtComment = document.getElementById(`comment${uglyThingId}`)
+        //const txtComment = document.getElementById(`comment${uglyThingId}`)
         let uglyThings = [...this.state.uglyThings]
 
         //if (txtComment.value !== '' && txtComment.value === this.state.comment) {
-            //uglyThings[uglyThingId].comments.push(this.state.comment)
-            uglyThings[uglyThingId].comments.push(txtComment.value)
+            uglyThings[uglyThingId].comments.push(this.state.comment)
+            //uglyThings[uglyThingId].comments.push(txtComment.value)
 
             this.setState({uglyThings})
-            //this.setState({comment: ''})
+            this.setState({comment: ''})
         //}
 
-        txtComment.value = ''
+        //txtComment.value = ''
     }
 
     deleteComment = (index, uglyThingId) => {

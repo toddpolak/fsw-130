@@ -55,13 +55,15 @@ function displayRenderer(
                 </div>
             </div>
             <div>
+                
                 <input
                     type='text'
                     className='comment-input'
                     name={`comment${uglyThingId}`}
                     id={`comment${uglyThingId}`}
-                    placeholder='Enter Comment' />
-                    
+                    placeholder='Enter Comment'
+                    onChange={commentChangeHandler} />
+
                 <button id={uglyThingId}
                     onClick={addComment}>
                     Add
