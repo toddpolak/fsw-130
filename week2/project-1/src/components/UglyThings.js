@@ -16,7 +16,8 @@ function displayRenderer(
     comment,
     commentChangeHandler,
     addComment,
-    deleteComment
+    deleteComment,
+    enteredComments
     ) {
     if (id === uglyThingId) {
         return (
@@ -61,9 +62,9 @@ function displayRenderer(
                     type='text'
                     className='comment-input'
                     name='comment'
-                    id={`comment${uglyThingId}`}
                     placeholder='Enter Comment'
-                    value={comment}
+                    value={enteredComments[uglyThingId] || ''}
+                    data-id={uglyThingId}
                     onChange={commentChangeHandler} />
 
                 <button id={uglyThingId}
@@ -165,7 +166,8 @@ function UglyThings() {
                                 context.comment,
                                 context.commentChangeHandler,
                                 context.addComment,
-                                context.deleteComment
+                                context.deleteComment,
+                                context.enteredComments
                             )}
                         </div>
                     )}

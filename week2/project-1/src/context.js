@@ -14,7 +14,7 @@ class ContextProvider extends Component {
             image: '',
 
             comment: '',
-            enteredComments: [{comment: ''}],
+            enteredComments: [],
 
             editTitle: '',
             editDescription: '',
@@ -35,23 +35,33 @@ class ContextProvider extends Component {
             comments: []
         }
 
+        /*
         this.setState((prevState) => ({
             uglyThings: [...prevState.uglyThings, entry]
         }))
+        */
 
-        /*
         this.setState({
             uglyThings: [...this.state.uglyThings, entry]
         })
-        */
-
+        
         this.setState({
             title: '',
             image: '',
             description: ''
         })
+        /*
+        <input
+            type='text'
+            className='comment-input'
+            name='comment'
+            id={`comment${uglyThingId}`}
+            placeholder='Enter Comment'
+            value={comment}
+            onChange={commentChangeHandler} />
+        */
     }
-
+    
     editUglyThing = (uglyThingId, title, description, image) => {
         this.setState({
             id: uglyThingId,
@@ -91,19 +101,15 @@ class ContextProvider extends Component {
     
     commentChangeHandler = (event) => {
 
-        const {name, value} = event.target
+        //const {name, value} = event.target
 
-        console.log('name: ', name)
-        console.log('value: ', value)
+        let enteredComments = [...this.state.enteredComments]
 
-        let entry = {
-            name: name,
-            value: value
-        }
+        enteredComments[event.target.dataset.id] = event.target.value
 
-        console.log('entry: ', entry)
+        this.setState({ enteredComments }, () => console.log(this.state.enteredComments))
 
-        this.setState({[name]: value})
+        //this.setState({[name]: value})
     }
     
     addComment = (event) => {
@@ -111,12 +117,23 @@ class ContextProvider extends Component {
         //const txtComment = document.getElementById(`comment${uglyThingId}`)
         let uglyThings = [...this.state.uglyThings]
 
+        console.log(this.state.enteredComments[uglyThingId])
+
         //if (txtComment.value !== '' && txtComment.value === this.state.comment) {
-            uglyThings[uglyThingId].comments.push(this.state.comment)
+
+            //uglyThings[uglyThingId].comments.push(this.state.comment)
+
+            uglyThings[uglyThingId].comments.push(this.state.enteredComments[uglyThingId])
+
             //uglyThings[uglyThingId].comments.push(txtComment.value)
 
             this.setState({uglyThings})
             this.setState({comment: ''})
+
+            this.setState({
+                enteredComments: []
+            })
+            
         //}
 
         //txtComment.value = ''
@@ -150,7 +167,8 @@ class ContextProvider extends Component {
                 deleteUglyThing: this.deleteUglyThing,
                 commentChangeHandler: this.commentChangeHandler,
                 addComment: this.addComment,
-                deleteComment: this.deleteComment
+                deleteComment: this.deleteComment,
+                enteredComments: this.state.enteredComments
             }}>
                 {this.props.children}
             </Provider>
