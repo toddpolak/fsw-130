@@ -66,15 +66,15 @@ input[name="title"] {
     width: 170px;
 }
 
+/*
 input[name="comment"] {
     width: 150px;
 }
+*/
 
-/*
 .comment-input {
     width: 150px;
 }
-*/
 
 .edit-renderer {
     text-align: center;

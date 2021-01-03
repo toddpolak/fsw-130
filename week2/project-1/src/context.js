@@ -14,7 +14,7 @@ class ContextProvider extends Component {
             image: '',
 
             comment: '',
-            enteredComments: [],
+            enteredComments: [{comment: ''}],
 
             editTitle: '',
             editDescription: '',
@@ -35,9 +35,15 @@ class ContextProvider extends Component {
             comments: []
         }
 
+        this.setState((prevState) => ({
+            uglyThings: [...prevState.uglyThings, entry]
+        }))
+
+        /*
         this.setState({
             uglyThings: [...this.state.uglyThings, entry]
         })
+        */
 
         this.setState({
             title: '',
@@ -69,7 +75,7 @@ class ContextProvider extends Component {
             description: this.state.editDescription,
             image: this.state.editImage
         }
-
+        
         this.setState({uglyThings})
         this.setState({id: ''})
     }

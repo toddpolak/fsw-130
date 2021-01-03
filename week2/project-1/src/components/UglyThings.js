@@ -13,6 +13,7 @@ function displayRenderer(
     editDescription,
     editImage,
     editChangeHandler,
+    comment,
     commentChangeHandler,
     addComment,
     deleteComment
@@ -59,9 +60,10 @@ function displayRenderer(
                 <input
                     type='text'
                     className='comment-input'
-                    name={`comment${uglyThingId}`}
+                    name='comment'
                     id={`comment${uglyThingId}`}
                     placeholder='Enter Comment'
+                    value={comment}
                     onChange={commentChangeHandler} />
 
                 <button id={uglyThingId}
@@ -160,6 +162,7 @@ function UglyThings() {
                                 context.editDescription,
                                 context.editImage,
                                 context.editChangeHandler,
+                                context.comment,
                                 context.commentChangeHandler,
                                 context.addComment,
                                 context.deleteComment
