@@ -57,7 +57,6 @@ function displayRenderer(
                 </div>
             </div>
             <div>
-                
                 <input
                     type='text'
                     className='comment-input'
@@ -66,7 +65,6 @@ function displayRenderer(
                     value={enteredComments[uglyThingId] || ''}
                     data-id={uglyThingId}
                     onChange={commentChangeHandler} />
-
                 <button id={uglyThingId}
                     onClick={addComment}>
                     Add
