@@ -48,7 +48,7 @@ function displayRenderer(
     }
     return (
         <div className='ugly-thing'>
-            <div className='common'>
+            <div className='common display'>
                 <h4>{title}</h4>
                 <div className='txt-display'>{description}</div>
                 <img src={image} alt='' />
