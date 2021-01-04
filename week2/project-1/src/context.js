@@ -36,12 +36,6 @@ class ContextProvider extends Component {
             uglyThings: [...prevState.uglyThings, entry]
         }))
 
-        /*
-        this.setState({
-            uglyThings: [...this.state.uglyThings, entry]
-        })
-        */
-        
         this.setState({
             title: '',
             image: '',
