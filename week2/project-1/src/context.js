@@ -32,15 +32,15 @@ class ContextProvider extends Component {
             comments: []
         }
 
-        /*
         this.setState((prevState) => ({
             uglyThings: [...prevState.uglyThings, entry]
         }))
-        */
 
+        /*
         this.setState({
             uglyThings: [...this.state.uglyThings, entry]
         })
+        */
         
         this.setState({
             title: '',

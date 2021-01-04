@@ -1,5 +1,6 @@
 body {
     background-color: rgb(179, 155, 155);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .heading {
@@ -18,8 +19,8 @@ body {
 .layout {
     display: grid;
     grid-template-areas: 'a a a';
-    grid-auto-columns: 200px;
-    gap: 39px;
+    grid-auto-columns: 220px;
+    gap: 10px;
 }
 
 .common {
@@ -40,9 +41,6 @@ form {
     padding: 10px;
     width: 280px;
     background-color: rgb(224, 222, 217);;
-    /*
-    background-color: rgb(167, 195, 196);
-    */
 }
 
 .form-content {
@@ -66,11 +64,10 @@ input[name="title"] {
     width: 170px;
 }
 
-/*
-input[name="comment"] {
-    width: 150px;
+.ugly-thing {
+    border: 1px solid black;
+    padding: 5px;
 }
-*/
 
 .comment-input {
     width: 150px;
@@ -100,7 +97,7 @@ input[name="comment"] {
 }
 
 img {
-    width: 75%;
+    width: 80%;
     height: auto;
 }
 
@@ -108,4 +105,10 @@ img {
     width: 15px;
     height: 15px;
     cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: small;
 }

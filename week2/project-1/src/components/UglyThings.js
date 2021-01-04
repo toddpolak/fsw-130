@@ -13,7 +13,6 @@ function displayRenderer(
     editDescription,
     editImage,
     editChangeHandler,
-    comment,
     commentChangeHandler,
     addComment,
     deleteComment,
@@ -21,7 +20,7 @@ function displayRenderer(
     ) {
     if (id === uglyThingId) {
         return (
-            <div>
+            <div className='ugly-thing'>
                 <div className='form-input'>
                     <input
                         type='text'
@@ -48,13 +47,11 @@ function displayRenderer(
         )
     }
     return (
-        <div>
-            <div>
-                <div className='common'>
-                    <h4>{title}</h4>
-                    <div className='txt-display'>{description}</div>
-                    <img src={image} alt='' />
-                </div>
+        <div className='ugly-thing'>
+            <div className='common'>
+                <h4>{title}</h4>
+                <div className='txt-display'>{description}</div>
+                <img src={image} alt='' />
             </div>
             <div>
                 <input
@@ -161,7 +158,6 @@ function UglyThings() {
                                 context.editDescription,
                                 context.editImage,
                                 context.editChangeHandler,
-                                context.comment,
                                 context.commentChangeHandler,
                                 context.addComment,
                                 context.deleteComment,
