@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Timer(props) {
+function Display(props) {
     return (
         <div>
             {props.count}
@@ -8,4 +8,4 @@ function Timer(props) {
     )
 }
 
-export default Timer
+export default Display

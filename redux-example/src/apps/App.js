@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import store from '../stores/configureStore'
-import Timer from './components/Timer'
+import Display from './components/Display'
 
 class App extends Component {
 
@@ -35,7 +35,7 @@ class App extends Component {
                 }}>
                     Decrement
                 </button>
-                <Timer count={store.getState().count} />
+                <Display count={store.getState().count} />
             </div>
         )
     }
