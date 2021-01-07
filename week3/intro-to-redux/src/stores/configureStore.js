@@ -5,7 +5,6 @@ const defaultState = {
 }
 
 function reducer(state = defaultState, action) {
-    console.log('state', state)
     switch(action.type) {
         case "INCREMENT":
             return {
