@@ -1,20 +1,25 @@
 import { createStore } from 'redux'
 
 const defaultState = {
-    count: 0
+    time: 0
 }
 
 function reducer(state = defaultState, action) {
     switch(action.type) {
-        case "INCREMENT":
+        case 'START':
             return {
                 ...state,
-                count: state.count + 1
+                time: state.time + 1
             }
-        case "DECREMENT":
+        case 'STOP':
             return {
                 ...state,
-                count: state.count - 1
+                time: state.time - 1
+            }
+        case 'RESET':
+            return {
+                ...state,
+                time: state.time = 0
             }
         default:
             return state

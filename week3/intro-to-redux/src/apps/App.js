@@ -10,15 +10,21 @@ class App extends Component {
         })
     }
 
-    increment() {
+    start() {
         return {
-            type: 'INCREMENT'
+            type: 'START'
         }
     }
 
-    decrement() {
+    stop() {
         return {
-            type: 'DECREMENT'
+            type: 'STOP'
+        }
+    }
+
+    reset() {
+        return {
+            type: 'RESET'
         }
     }
 
@@ -26,16 +32,21 @@ class App extends Component {
         return (
             <div>
                 <button onClick={() => {
-                    store.dispatch(this.increment())
+                    store.dispatch(this.start())
                 }}>
-                    Increment
+                    Start
                 </button>
                 <button onClick={() => {
-                    store.dispatch(this.decrement())
+                    store.dispatch(this.stop())
                 }}>
-                    Decrement
+                    Stop
                 </button>
-                <Timer count={store.getState().count} />
+                <button onClick={() => {
+                    store.dispatch(this.reset())
+                }}>
+                    Reset
+                </button>
+                <Timer time={store.getState().time} />
             </div>
         )
     }
