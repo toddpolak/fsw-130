@@ -14,7 +14,7 @@ function reducer(state = defaultState, action) {
         case 'STOP':
             return {
                 ...state,
-                time: state.time - 1
+                time: state.time
             }
         case 'RESET':
             return {

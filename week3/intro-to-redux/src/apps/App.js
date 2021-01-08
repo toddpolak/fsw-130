@@ -4,34 +4,23 @@ import Timer from './components/Timer'
 
 class App extends Component {
 
+    static timerInterval
+
     componentDidMount() {
         store.subscribe(() => {
             this.setState({})
         })
     }
 
-    start() {
-        return {
-            type: 'START'
-        }
-    }
-
-    stop() {
-        return {
-            type: 'STOP'
-        }
-    }
-
-    reset() {
-        return {
-            type: 'RESET'
-        }
-    }
-
     startCounter() {
-        setInterval(() => {
+        this.timerInterval = setInterval(() => {
             store.dispatch({type: 'START'})
-        }, 100)
+        }, 1000)
+    }
+
+    stopCounter() {
+        clearInterval(this.timerInterval)
+        store.dispatch({type: 'STOP'})
     }
 
     render() {
@@ -39,18 +28,15 @@ class App extends Component {
             <div>
                 <button onClick={() => {
                     this.startCounter()
-                    //store.dispatch(this.start())
                 }}>
                     Start
                 </button>
                 <button onClick={() => {
-                    store.dispatch(this.stop())
-
+                    this.stopCounter()
                 }}>
                     Stop
                 </button>
                 <button onClick={() => {
-                    store.dispatch(this.reset())
                 }}>
                     Reset
                 </button>
