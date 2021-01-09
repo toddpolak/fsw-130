@@ -2,6 +2,7 @@ import { createStore } from 'redux'
 
 const defaultState = {
     time: 0,
+    lapCounter: [],
     isRunning: false
 }
 
@@ -25,10 +26,11 @@ function reducer(state = defaultState, action) {
                 time: state.time = 0,
                 isRunning: false
             }
-        //case 'LAP':
-            
-
-
+        case 'LAP':
+            return {
+                ...state,
+                lapCounter: state.time
+            }
         default:
             return state
     }
