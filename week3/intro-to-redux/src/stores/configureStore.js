@@ -1,7 +1,8 @@
 import { createStore } from 'redux'
 
 const defaultState = {
-    time: 0
+    time: 0,
+    isRunning: false
 }
 
 function reducer(state = defaultState, action) {
@@ -9,18 +10,25 @@ function reducer(state = defaultState, action) {
         case 'START':
             return {
                 ...state,
-                time: state.time + 10
+                time: state.time + 10,
+                isRunning: true
             }
         case 'STOP':
             return {
                 ...state,
-                time: state.time
+                time: state.time,
+                isRunning: false
             }
         case 'RESET':
             return {
                 ...state,
-                time: state.time = 0
+                time: state.time = 0,
+                isRunning: false
             }
+        //case 'LAP':
+            
+
+
         default:
             return state
     }

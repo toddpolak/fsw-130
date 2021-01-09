@@ -11,6 +11,10 @@ class App extends Component {
             this.setState({})
         })
     }
+    
+    componentWillUnmount() {
+        clearInterval(this.timerInterval)
+    }
 
     startCounter() {
         this.timerInterval = setInterval(() => {
@@ -31,16 +35,19 @@ class App extends Component {
     render() {
         return (
             <div>
-                <button onClick={() => {
-                    this.startCounter()
-                }}>
-                    Start
-                </button>
-                <button onClick={() => {
-                    this.stopCounter()
-                }}>
-                    Stop
-                </button>
+                {!store.getState().isRunning ? (
+                    <button onClick={() => {
+                        this.startCounter()
+                    }}>
+                        Start
+                    </button>
+                ) : (
+                    <button onClick={() => {
+                        this.stopCounter()
+                    }}>
+                        Stop
+                    </button>
+                )}
                 <button onClick={() => {
                     this.resetCounter()
                 }}>
