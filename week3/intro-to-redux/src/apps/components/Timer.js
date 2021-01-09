@@ -5,6 +5,8 @@ function displayTimer(time) {
     let seconds = ((time % 60000) / 1000).toFixed(0)
     let milliseconds = time % 1000
 
+    if (seconds === '60') {seconds = '0'}
+
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds + ':' + milliseconds
 }
 
