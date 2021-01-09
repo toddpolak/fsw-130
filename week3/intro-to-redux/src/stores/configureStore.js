@@ -9,7 +9,7 @@ function reducer(state = defaultState, action) {
         case 'START':
             return {
                 ...state,
-                time: state.time + 1
+                time: state.time + 10
             }
         case 'STOP':
             return {

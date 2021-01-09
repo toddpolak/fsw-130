@@ -1,12 +1,11 @@
 import React from 'react'
 
 function displayTimer(time) {
-    let totalMinutesPassed = Math.floor(time/60)
-    let minutes = totalMinutesPassed % 60
-    let seconds = time % 60
+    let minutes = Math.floor(time / 60000)
+    let seconds = ((time % 60000) / 1000).toFixed(0)
+    let milliseconds = time % 1000
 
-    return `${minutes} minutes ${seconds} seconds`
-    //return `${minutes} minutes ${seconds} seconds ${milliseconds} milliseconds`
+    return minutes + ":" + (seconds < 10 ? '0' : '') + seconds + ':' + milliseconds
 }
 
 function Timer(props) {

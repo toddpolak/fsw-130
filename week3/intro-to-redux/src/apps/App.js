@@ -15,7 +15,7 @@ class App extends Component {
     startCounter() {
         this.timerInterval = setInterval(() => {
             store.dispatch({type: 'START'})
-        }, 1000)
+        }, 10)
     }
 
     stopCounter() {
