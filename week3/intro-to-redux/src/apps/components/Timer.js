@@ -2,14 +2,8 @@ import React from 'react'
 
 function displayTimer(time) {
     let minutes = Math.floor(time / 60000)
-    let seconds = ((time % 60000) / 1000).toFixed(0)
+    let seconds = Math.floor((time % 60000) / 1000)
     let milliseconds = time % 1000
-
-    if (seconds === '60') {
-        seconds = '0'
-    }
-
-    console.log('milliseconds: ', milliseconds)
 
     if (milliseconds === 0) {milliseconds = '000'}
 
