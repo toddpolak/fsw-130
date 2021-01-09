@@ -23,6 +23,11 @@ class App extends Component {
         store.dispatch({type: 'STOP'})
     }
 
+    resetCounter() {
+        clearInterval(this.timerInterval)
+        store.dispatch({type: 'RESET'})
+    }
+
     render() {
         return (
             <div>
@@ -37,6 +42,7 @@ class App extends Component {
                     Stop
                 </button>
                 <button onClick={() => {
+                    this.resetCounter()
                 }}>
                     Reset
                 </button>
