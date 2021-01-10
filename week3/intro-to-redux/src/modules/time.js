@@ -9,7 +9,7 @@ function seconds(time) {
 }
 
 module.exports.milliseconds = (time) => {
-    let milliseconds = time % 1000
+    let milliseconds = Math.floor(time % 1000)
     return milliseconds
 }
 
@@ -24,27 +24,15 @@ module.exports.lapDisplay = (time) => {
     let display = ''
     
     if (min > 0) {
-        if (min > 1) {
-            display += `${min} Minutes `
-        } else {
-            display += `${min} Minute `
-        }
+        min > 1 ? display += `${min} Minutes ` : display += `${min} Minute `
     }
 
     if (sec > 0) {
-        if (sec > 1) {
-            display += `${sec} Seconds `
-        } else {
-            display += `${sec} Second `
-        }
+            sec > 1 ? display += `${sec} Seconds ` : display += `${sec} Second `
     }
 
     if (milli > 0) {
-        if (milli > 1) {
-            display += `${milli} Milliseconds`
-        } else {
-            display += `${milli} Millisecond`
-        }
+            milli > 1 ? display += `${milli} Milliseconds` : display += `${milli} Millisecond`
     }
 
     return display
