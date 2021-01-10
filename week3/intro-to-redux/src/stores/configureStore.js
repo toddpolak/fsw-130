@@ -24,6 +24,7 @@ function reducer(state = defaultState, action) {
             return {
                 ...state,
                 time: state.time = 0,
+                lapCounter: [],
                 isRunning: false
             }
         case 'LAP':

@@ -1,6 +1,20 @@
 .timer-display {
+    border: 1px solid black;
     text-align: center;
     font-size: xx-large;
+}
+.timer {
+    padding: 5px;
+}
+.time {
+    display: inline-block;
+    width: 75px;
+    text-align: right;
+}
+.milliseconds {
+    display: inline-block;
+    width: 50px;
+    text-align: left;
 }
 .content {
     border: 1px solid black;
@@ -14,14 +28,26 @@
     padding: 10px;
 }
 .button {
-    display: inline;
+    display: inline-block;
+    width: 50px;
     padding: 10px;
+}
+button {
+    background-color: black;
+    color: white;
+}
+button:hover {
+    background-color: lightgray;
+    color: black;
 }
 .laps {
     text-align: center;
+    background-color: rgb(224, 223, 223);
     border: 1px solid black;
     padding: 10px;
 }
 .lap {
+    padding: 10px;
     font-size: x-large;
+    text-align: left;
 }
