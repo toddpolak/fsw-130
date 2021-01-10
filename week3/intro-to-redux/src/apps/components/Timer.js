@@ -1,5 +1,5 @@
 import React from 'react'
-import store from '../../stores/configureStore'
+import store from '../stores/configureStore'
 
 const modules = require('../../modules/time')
 

@@ -1,5 +1,5 @@
 import React, { Component} from 'react'
-import store from '../stores/configureStore'
+import store from './stores/configureStore'
 import Timer from './components/Timer'
 import Buttons from './components/Buttons'
 import LapCounter from './components/LapCounter'

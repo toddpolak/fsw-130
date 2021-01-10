@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import store from '../../stores/configureStore'
+import store from '../stores/configureStore'
 
 class Buttons extends Component {
 
