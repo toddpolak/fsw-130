@@ -28,11 +28,11 @@ module.exports.lapDisplay = (time) => {
     }
 
     if (sec > 0) {
-            sec > 1 ? display += `${sec} Seconds ` : display += `${sec} Second `
+        sec > 1 ? display += `${sec} Seconds ` : display += `${sec} Second `
     }
 
     if (milli > 0) {
-            milli > 1 ? display += `${milli} Milliseconds` : display += `${milli} Millisecond`
+        milli > 1 ? display += `${milli} Milliseconds` : display += `${milli} Millisecond`
     }
 
     return display
