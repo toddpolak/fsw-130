@@ -2,7 +2,6 @@
     text-align: center;
     font-size: xx-large;
 }
-
 .content {
     border: 1px solid black;
     background-color: whitesmoke;
@@ -10,13 +9,19 @@
     width: 500px;
     padding: 20px;
 }
-
 .buttons {
     text-align: center;
     padding: 10px;
 }
-
 .button {
     display: inline;
     padding: 10px;
+}
+.laps {
+    text-align: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+.lap {
+    font-size: x-large;
 }

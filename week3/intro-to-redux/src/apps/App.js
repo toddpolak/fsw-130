@@ -40,7 +40,7 @@ class App extends Component {
     render() {
         return (
             <div className='content'>
-                <Timer time={store.getState().time} />
+                <Timer />
                 <div className='buttons'>
                     {!store.getState().isRunning ? (
                         <div className='button'>
@@ -74,9 +74,7 @@ class App extends Component {
                         </button>
                     </div>
                 </div>
-
-                <LapCounter laps={store.getState().lapCounter} />
-
+                <LapCounter />
             </div>
         )
     }

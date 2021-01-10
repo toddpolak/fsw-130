@@ -29,7 +29,7 @@ function reducer(state = defaultState, action) {
         case 'LAP':
             return {
                 ...state,
-                lapCounter: state.time
+                lapCounter: [...state.lapCounter, state.time]
             }
         default:
             return state
