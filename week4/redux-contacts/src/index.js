@@ -1,4 +1,8 @@
-const redux = require('redux')
+import { createStore } from 'redux'
+
+const initialState = {
+    contacts: []
+}
 
 function addContact(contact) {
     return {
@@ -12,10 +16,6 @@ function deleteContact(contact) {
         type: 'DELETE_CONTACT',
         payload: contact
     }
-}
-
-const initialState = {
-    contacts: []
 }
 
 function reducer(state = initialState, action) {
@@ -43,7 +43,8 @@ function reducer(state = initialState, action) {
     }
 }
 
-const store = redux.createStore(reducer)
+const store = createStore(reducer)
+
 store.subscribe(() => {
     console.log(store.getState())
 })
