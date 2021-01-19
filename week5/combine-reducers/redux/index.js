@@ -10,10 +10,4 @@ const rootReducer = combineReducers({
 
 const store = createStore(rootReducer)
 
-store.subscribe(() => {
-    console.log(store.getState().tvShows)
-    console.log(store.getState().movies)
-
-})
-
 module.exports = store

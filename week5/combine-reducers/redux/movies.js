@@ -43,8 +43,8 @@ function moviesReducer(state = initialState, action) {
 }
 
 module.exports = {
-    addMovie: addMovie,
-    deleteMovie: deleteMovie,
-    moviesViewAll: moviesViewAll,
-    moviesReducer: moviesReducer
+    addMovie,
+    deleteMovie,
+    moviesViewAll,
+    moviesReducer
 }

@@ -1,14 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\week4",
-    "\\week4\\redux-contacts",
-    "\\week4\\redux-contacts\\src",
-    "\\week4\\redux-contacts\\src\\store",
     "\\week5",
     "\\week5\\combine-reducers",
     "\\week5\\combine-reducers\\redux"
   ],
-  "SelectedNode": "\\week5\\combine-reducers",
+  "SelectedNode": "\\week5\\combine-reducers\\redux\\index.js",
   "PreviewInSolutionExplorer": false
 }

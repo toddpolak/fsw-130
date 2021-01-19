@@ -43,8 +43,8 @@ function tvShowsReducer(state = initialState, action) {
 }
 
 module.exports = {
-    addTvShow: addTvShow,
-    deleteTvShow: deleteTvShow,
-    tvShowsViewAll: tvShowsViewAll,
-    tvShowsReducer: tvShowsReducer
+    addTvShow,
+    deleteTvShow,
+    tvShowsViewAll,
+    tvShowsReducer
 }
