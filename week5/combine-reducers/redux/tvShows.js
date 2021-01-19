@@ -12,6 +12,12 @@ function deleteTvShow(tvShow) {
     }
 }
 
+function tvShowsViewAll() {
+    return {
+        type: 'TV_SHOWS_VIEW_ALL'
+    }
+}
+
 const initialState = {
     tvShows: []
 }
@@ -24,17 +30,21 @@ function tvShowsReducer(state = initialState, action) {
                 tvShows: [...state.tvShows, action.payload]
             }
         case 'DELETE_TV_SHOW':
-            const updatedTvShows = tvShows.filter(tvShow => tvShow !== action.payload)
+            const updatedTvShows = state.tvShows.filter(tvShow => tvShow !== action.payload)
             return {
                 ...state,
                 tvShows: updatedTvShows
             }
+        case 'TV_SHOWS_VIEW_ALL':
+            return `All TV Shows: ${state.tvShows}`
         default: 
-            return tvShows
+            return state
     }
 }
 
 module.exports = {
     addTvShow: addTvShow,
+    deleteTvShow: deleteTvShow,
+    tvShowsViewAll: tvShowsViewAll,
     tvShowsReducer: tvShowsReducer
 }
