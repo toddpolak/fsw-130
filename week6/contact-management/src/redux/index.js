@@ -1,10 +1,17 @@
-import redux, { createStore } from 'redux'
+//import redux, { createStore } from 'redux'
+import { createStore } from 'redux'
 
+const initialState = [
+    { name: 'Todd' }
+]
+
+/*
 const initialState = {
     contacts: [
         { name: 'Todd' }
     ]
 }
+*/
 
 export function addContact(contact) {
     return {
@@ -47,6 +54,7 @@ function reducer(state = initialState, action) {
 
 const store = createStore(reducer)
 
-store.subscribe(() => {console.log(store.getState())})
+store.subscribe(() => store.getState())
+//store.subscribe(() => {console.log(store.getState())})
 
 export default store
