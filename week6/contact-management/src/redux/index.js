@@ -1,17 +1,4 @@
-//import redux, { createStore } from 'redux'
 import { createStore } from 'redux'
-
-const initialState = [
-    { name: 'Todd' }
-]
-
-/*
-const initialState = {
-    contacts: [
-        { name: 'Todd' }
-    ]
-}
-*/
 
 export function addContact(contact) {
     return {
@@ -20,41 +7,26 @@ export function addContact(contact) {
     }
 }
 
-export function deleteContact(contact) {
+export function deleteContact(index) {
     return {
         type: 'DELETE_CONTACT',
-        payload: contact
+        payload: index
     }
 }
 
-function reducer(state = initialState, action) {
+function reducer(contacts = [], action) {
     switch (action.type) {
         case 'ADD_CONTACT':
-            return {
-                ...state,
-                contacts: [...state.contacts, action.payload]
-            }
+            return contacts = [...contacts, action.payload]
         case 'DELETE_CONTACT':
-            const updatedContacts = state.contacts.filter(function (contact) {
-                if (action.payload.name === contact.name &&
-                    action.payload.phone === contact.phone &&
-                    action.payload.email === contact.email) {
-                    return false
-                }
-                return true
-            })
-            return {
-                ...state,
-                contacts: updatedContacts
-            }
+            return  contacts = contacts.filter((contact, index) => index !== action.payload)
         default:
-            return state
+            return contacts
     }
 }
 
 const store = createStore(reducer)
 
 store.subscribe(() => store.getState())
-//store.subscribe(() => {console.log(store.getState())})
 
 export default store
