@@ -6,6 +6,7 @@ import './App.css';
 function App() {
     return (
         <div className='container'>
+            <h2>Contact Management</h2>
             <ContactForm />
             <ContactList />
         </div>

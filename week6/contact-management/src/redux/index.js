@@ -8,8 +8,6 @@ export function addContact(contact) {
 }
 
 export function editContact(contact, index) {
-    console.log('contact: ', contact)
-    console.log('index: ', index)
     return {
         type: 'EDIT_CONTACT',
         payload: contact,
@@ -30,8 +28,7 @@ function reducer(contacts = [], action) {
             return contacts = [...contacts, action.payload]
 
         case 'EDIT_CONTACT':
-            console.log('action: ', action)
-
+            return contacts = contacts.map((contact, index) => action.index !== index ? contact : action.payload)
         case 'DELETE_CONTACT':
             return contacts = contacts.filter((contact, index) => index !== action.payload)
         default:
