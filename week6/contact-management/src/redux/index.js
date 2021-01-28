@@ -26,7 +26,6 @@ function reducer(contacts = [], action) {
     switch (action.type) {
         case 'ADD_CONTACT':
             return contacts = [...contacts, action.payload]
-
         case 'EDIT_CONTACT':
             return contacts = contacts.map((contact, index) => action.index !== index ? contact : action.payload)
         case 'DELETE_CONTACT':

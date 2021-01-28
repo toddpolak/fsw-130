@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { editContact } from '../redux'
 import { deleteContact } from '../redux'
+import Contact from '../components/Contact'
 
 function ContactList({ dispatch, contacts }) {
 
@@ -37,7 +38,10 @@ function ContactList({ dispatch, contacts }) {
         <div>
             {
 
-
+                contacts.map((contact, index) =>
+                    <Contact
+                        {...contact}
+                        key={index} />)
 
                 /*
                 
