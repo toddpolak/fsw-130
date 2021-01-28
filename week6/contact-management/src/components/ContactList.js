@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
-import { editContact } from '../redux'
 import { deleteContact } from '../redux'
 
 function ContactList({ dispatch, contacts }) {
@@ -15,23 +14,25 @@ function ContactList({ dispatch, contacts }) {
     const [editToggle, setEditToggle] = useState(false)
 
     const [inputs, setInputs] = useState(initInputs)
-    
+
     function handleChange(e) {
         const { name, value } = e.target
+
+        console.log('value: ', value)
 
         setInputs(prevInputs => ({ ...prevInputs, [name]: value }))
     }
 
     function handleEdit(e) {
         e.preventDefault()
-        dispatch(editContact(inputs))
+        //dispatch(editContact(inputs))
         setInputs(initInputs)
     }
 
     return (
 
         <div>
-  
+
             {
                 contacts.map((contact, index) =>
 
@@ -59,7 +60,9 @@ function ContactList({ dispatch, contacts }) {
                                 <input
                                     type='text'
                                     name='first_name'
-                                    value={contact.first_name}
+
+                                    defaultValue={contact.first_name}
+
                                     onChange={handleChange}
                                     placeholder='First Name' />
                                 <input
@@ -100,7 +103,7 @@ function ContactList({ dispatch, contacts }) {
 }
 
 const mapStateToProps = state => {
-        return { contacts: state }
+    return { contacts: state }
 }
 
 export default connect(mapStateToProps)(ContactList)

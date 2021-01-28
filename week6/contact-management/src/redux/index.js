@@ -7,13 +7,6 @@ export function addContact(contact) {
     }
 }
 
-export function editContact(contact) {
-    return {
-        type: 'EDIT_CONTACT',
-        payload: contact
-    }
-}
-
 export function deleteContact(index) {
     return {
         type: 'DELETE_CONTACT',
@@ -25,8 +18,6 @@ function reducer(contacts = [], action) {
     switch (action.type) {
         case 'ADD_CONTACT':
             return contacts = [...contacts, action.payload]
-        case 'EDIT_CONTACT':
-
         case 'DELETE_CONTACT':
             return contacts = contacts.filter((contact, index) => index !== action.payload)
         default:
