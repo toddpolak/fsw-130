@@ -1,37 +1,48 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux'
 import { editContact } from '../redux'
-import { deleteContact } from '../redux'
+//import { deleteContact } from '../redux'
 import Contact from '../components/Contact'
 
 function ContactList({ dispatch, contacts }) {
 
+    /*
     const initInputs = {
         first_name: '',
         last_name: '',
         phone: '',
         email: ''
     }
+    */
 
-    const [editToggle, setEditToggle] = useState(false)
+    //const [editToggle, setEditToggle] = useState(false)
 
-    const [inputs, setInputs] = useState(initInputs)
+    //const [inputs, setInputs] = useState(initInputs)
 
+    /*
     function initEdit(contact) {
         setInputs(contact)
         setEditToggle(true)
     }
+    */
 
+    /*
     function handleChange(e) {
         const { name, value } = e.target
 
         setInputs(prevInputs => ({ ...prevInputs, [name]: value }))
     }
+    */
 
-    function handleEdit(index) {
+    function handleEdit(inputs, index) {
+
+        console.log('handleEdit: ', index)
+        console.log('handleEdit: ', inputs)
+
         dispatch(editContact(inputs, index))
-        setInputs(initInputs)
-        setEditToggle(false)
+        //setInputs(initInputs)
+        //setEditToggle(false)
+
     }
 
     return (
@@ -41,7 +52,9 @@ function ContactList({ dispatch, contacts }) {
                 contacts.map((contact, index) =>
                     <Contact
                         {...contact}
-                        key={index} />)
+                        key={index}
+                        index={index}
+                        handleEdit={handleEdit} />)
 
                 /*
                 
