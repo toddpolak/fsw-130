@@ -29,7 +29,9 @@ function reducer(contacts = [], action) {
         case 'EDIT_CONTACT':
             return contacts = contacts.map((contact, index) => action.index !== index ? contact : action.payload)
         case 'DELETE_CONTACT':
-            return contacts = contacts.filter((contact, index) => index !== action.payload)
+            const updatedContacts = contacts.filter((contact, index) => index !== action.payload)
+
+            return contacts = updatedContacts
         default:
             return contacts
     }
