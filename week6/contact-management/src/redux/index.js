@@ -37,6 +37,4 @@ function reducer(contacts = [], action) {
 
 const store = createStore(reducer)
 
-store.subscribe(() => store.getState())
-
 export default store
