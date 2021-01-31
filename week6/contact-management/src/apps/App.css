@@ -1,23 +1,34 @@
 * {
-    font-family: Arial;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+h2 {
+    text-align: center;
 }
 
 .container {
+    background-color: whitesmoke;
     width: 600px;
     margin: auto;
+    border: 1px solid gray;
 }
 
 form {
-    width: 500px;
+    width: 425px;
     background-color: rosybrown;
-    border: 1px solid #333;
+    border: 1px solid gray;
     padding: 10px;
-    margin: 5px;
+    margin: auto;
 }
 
 .edit-form {
+    background-color: lightgray;
     width: 200px;
-    border: 1px solid black;
+    border: 1px solid gray;
     padding: 10px;
     margin: 5px;
 }
@@ -28,17 +39,23 @@ input[type=text] {
 }
 
 .contacts {
+    width: 550px;
     display: grid;
     grid-template-areas: 'a a';
-    grid-auto-columns: 250px;
+    grid-auto-columns: 270px;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
+    padding: 20px;
+    margin: auto;
 }
 
 .contact-list {
     background-color: lightgray;
-
-    border: 1px solid black;
+    border: 1px solid gray;
     padding: 10px;
-    margin: 5px;
+    margin: auto;
+}
+
+.contact-name {
+    font-weight: bold;
 }

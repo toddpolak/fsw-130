@@ -29,7 +29,7 @@ function Contact(props) {
             { !editToggle ?
                 <>
                     <div className='contact-list'>
-                        <div>{`${first_name} ${last_name}`}</div>
+                        <div className='contact-name'>{`${first_name} ${last_name}`}</div>
                         <div>{methods.formatPhone(phone)}</div>
                         <div>{email}</div>
                         <button

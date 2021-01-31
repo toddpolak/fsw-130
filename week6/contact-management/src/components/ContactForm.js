@@ -21,8 +21,14 @@ function ContactForm({ dispatch }) {
 
     function handleSubmit(e) {
         e.preventDefault()
-        dispatch(addContact(inputs))
-        setInputs(initInputs)
+
+        if (inputs.first_name !== '' &&
+            inputs.last_name !== '' &&
+            inputs.phone !== '' &&
+            inputs.email !== '') {
+            dispatch(addContact(inputs))
+            setInputs(initInputs)
+        }
     }
 
     return (
