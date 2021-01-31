@@ -27,30 +27,30 @@ function ContactForm({ dispatch }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <input
-                type='text'
-                name='first_name'
-                value={inputs.first_name}
-                onChange={handleChange}
-                placeholder='First Name' />
-            <input
-                type='text'
-                name='last_name'
-                value={inputs.last_name}
-                onChange={handleChange}
-                placeholder='Last Name' />
-            <input
-                type='text'
-                name='phone'
-                value={inputs.phone}
-                onChange={handleChange}
-                placeholder='Phone' />
-            <input
-                type='text'
-                name='email'
-                value={inputs.email}
-                onChange={handleChange}
-                placeholder='Email' />
+                <input
+                    type='text'
+                    name='first_name'
+                    value={inputs.first_name}
+                    onChange={handleChange}
+                        placeholder='First Name' />
+                <input
+                    type='text'
+                    name='last_name'
+                    value={inputs.last_name}
+                    onChange={handleChange}
+                    placeholder='Last Name' />
+                <input
+                    type='text'
+                    name='phone'
+                    value={inputs.phone}
+                    onChange={handleChange}
+                    placeholder='Phone' />
+                <input
+                    type='text'
+                    name='email'
+                    value={inputs.email}
+                    onChange={handleChange}
+                    placeholder='Email' />
             <button>Add Contact</button>
         </form>
     )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import methods from '../methods'
 
 function Contact(props) {
     const { first_name, last_name, phone, email } = props
@@ -29,7 +30,7 @@ function Contact(props) {
                 <>
                     <div className='contact-list'>
                         <div>{`${first_name} ${last_name}`}</div>
-                        <div>{phone}</div>
+                        <div>{methods.formatPhone(phone)}</div>
                         <div>{email}</div>
                         <button
                             className='btn'
@@ -43,7 +44,7 @@ function Contact(props) {
                 </>
               :
                 <>
-                    <div className='form'>
+                    <div className='edit-form'>
                         <input
                             type='text'
                             name='first_name'

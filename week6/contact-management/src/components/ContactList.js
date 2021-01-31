@@ -14,7 +14,7 @@ function ContactList({ dispatch, contacts }) {
     }
 
     return (
-        <div>
+        <div className='contacts'>
             {
                 contacts.map((contact, index) =>
                     <Contact

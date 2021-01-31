@@ -1,18 +1,43 @@
+* {
+    font-family: Arial;
+}
+
 .container {
     width: 600px;
     margin: auto;
 }
 
-form, .form {
-    width: 400px;
-    background-color: cornsilk;
+form {
+    width: 500px;
+    background-color: rosybrown;
     border: 1px solid #333;
     padding: 10px;
     margin: 5px;
 }
 
+.edit-form {
+    width: 200px;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 5px;
+}
+
+input[type=text] {
+    padding: 5px 5px 5px 5px;
+    margin: 5px 5px 5px 10px;
+}
+
+.contacts {
+    display: grid;
+    grid-template-areas: 'a a';
+    grid-auto-columns: 250px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+}
+
 .contact-list {
-    width: 400px;
+    background-color: lightgray;
+
     border: 1px solid black;
     padding: 10px;
     margin: 5px;
