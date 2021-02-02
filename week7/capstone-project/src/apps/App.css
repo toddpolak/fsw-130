@@ -1,0 +1,22 @@
+.container {
+    background-color: whitesmoke;
+    width: 600px;
+    margin: auto;
+    border: 1px solid gray;
+}
+
+.navbar {
+    text-align: center;
+    width: 400px;
+    padding: 10px;
+    margin: auto;
+}
+
+.navlink {
+    padding: 10px;
+    margin: 10px;
+}
+
+h2 {
+    text-align: center;
+}
