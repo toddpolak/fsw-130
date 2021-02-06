@@ -1,8 +1,9 @@
 .container {
     background-color: whitesmoke;
-    width: 600px;
+    width: 680px;
     margin: auto;
     border: 1px solid gray;
+    padding: 20px;
 }
 
 .navbar {
@@ -19,4 +20,14 @@
 
 h2 {
     text-align: center;
+}
+
+.work_experience {
+    width: 650px;
+    display: grid;
+    grid-template-areas: 'a a a';
+    grid-auto-columns: 210px;
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+    margin: auto;
 }

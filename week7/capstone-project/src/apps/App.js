@@ -2,8 +2,9 @@ import React from 'react'
 import { Switch, Route } from "react-router-dom"
 import NavBar from "../components/Navbar"
 import Home from '../pages/Home'
-import Summer from '../pages/Summer'
-import Winter from '../pages/Winter'
+import Skillset from '../pages/Skillset'
+import WorkHistory from '../pages/WorkHistory'
+import Summary from '../pages/Summary'
 
 function App() {
     return (
@@ -11,8 +12,9 @@ function App() {
             <NavBar />
             <Switch>
                 <Route exact path="/" component={Home}></Route>
-                <Route path="/summer" component={Summer}></Route>
-                <Route path="/winter" component={Winter}></Route>
+                <Route path="/skillset" component={Skillset}></Route>
+                <Route path="/workhistory" component={WorkHistory}></Route>
+                <Route path="/summary" component={Summary}></Route>
             </Switch>
         </div>
     )
