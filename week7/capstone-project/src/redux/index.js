@@ -1,7 +1,79 @@
 import { createStore } from 'redux'
 
-function reducer(state = [], action) {
+const initialState = {
+    first_name: '',
+    last_name: '',
+    address: '',
+    skillsetSummary: '',
+    skills: [], 
+    workExperience: []
+}
+
+export function addBasicInfo(info) {
+
+    console.log('info: ', info)
+
+    return {
+        type: 'ADD_BASIC_INFO',
+        payload: info
+    }
+}
+
+export function addSkillset(skillset) {
+    return {
+        type: 'ADD_SKILLSET',
+        payload: skillset
+    }
+}
+
+export function addSkillsetSummary(skillsetSummary) {
+    return {
+        type: 'ADD_SKILLSET_SUMMARY',
+        payload: skillsetSummary
+    }
+}
+
+export function addWorkExperience(items) {
+
+    console.log('addWorkHistory: ', items)
+
+    return {
+        type: 'ADD_WORK_EXPERIENCE',
+        payload: items
+    }
+}
+
+function reducer(state = initialState, action) {
     switch (action.type) {
+        case 'ADD_BASIC_INFO':
+
+            console.log('action.payload: ', action.payload)
+
+            return {
+                ...state,
+                first_name: action.payload.first_name,
+                last_name: action.payload.last_name
+            }
+        case 'ADD_SKILLSET':
+            return {
+                ...state,
+                skills: [...state.skills, action.payload]
+            }
+        case 'ADD_SKILLSET_SUMMARY':
+            return {
+                ...state,
+                skillsetSummary: action.payload
+            }
+        case 'ADD_WORK_EXPERIENCE':
+
+            //return state.workhistory = [...state.workhistory, action.payload]
+
+            return {
+                ...state,
+                workExperience: [...state.workExperience, action.payload]
+            }
+            
+
         default:
             return state
     }

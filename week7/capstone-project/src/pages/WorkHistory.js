@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
+import Experience from '../components/Experience'
 
 function WorkHistory() {
     return (
         <div>
-
+            <Experience />
         </div>
     )
 }
