@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { deleteContact, editContact } from '../redux'
-import Contact from '../components/Contact'
+import Contact from './Contact'
 
 function ContactList({ dispatch, contacts }) {
 

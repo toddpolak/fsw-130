@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import EditForm from './EditForm'
 import methods from '../methods'
 
 function Contact(props) {
@@ -44,6 +45,10 @@ function Contact(props) {
                 </>
               :
                 <>
+                    <EditForm
+                        first_name={first_name}
+                        last_name={last_name} />
+
                     <div className='edit-form'>
                         <input
                             type='text'
