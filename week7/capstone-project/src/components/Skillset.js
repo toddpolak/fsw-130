@@ -48,6 +48,7 @@ function Skillset() {
 
     return (
         <div className='entry-page'>
+            <h2>Skills</h2>
             <div>
                 <textarea
                     type='text'

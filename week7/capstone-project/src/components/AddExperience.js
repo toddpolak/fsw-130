@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { addWorkExperience } from '../redux'
-import { useHistory } from 'react-router-dom'
 
 function WorkHistoryForm() {
     const dispatch = useDispatch()
-    const info = useSelector(info => info)
-    const history = useHistory()
 
     const initInputs = {
         employer_name: '',
@@ -74,12 +71,7 @@ function WorkHistoryForm() {
                     Add
                 </button>
             </div>
-            <div className='work_experience'>
-                {
-                    info.workExperience.map((item, index) =>
-                        <div key={index}></div>
-                )}
-            </div>
+
         </div>
     )
 }

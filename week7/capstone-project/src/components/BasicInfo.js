@@ -10,13 +10,13 @@ function BasicInfo() {
 
     const initInputs = {
         first_name: info.first_name || '',
-        last_name: '',
-        address: '',
-        city: '',
-        state: '',
-        zip: '',
-        phone: '',
-        email: ''
+        last_name: info.last_name || '',
+        address: info.address || '',
+        city: info.city || '',
+        state: info.state || '',
+        zip: info.zip || '',
+        phone: info.phone || '',
+        email: info.email || ''
     }
 
     const [inputs, setInputs] = useState(initInputs)
@@ -34,6 +34,8 @@ function BasicInfo() {
 
     return (
         <div className='entry-page'>
+            <h2>General Information</h2>
+            <h3>Provide your name and contact information to begin:</h3>
             <div>
                 <input
                     type='text'

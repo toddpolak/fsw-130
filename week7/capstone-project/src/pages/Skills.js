@@ -4,7 +4,7 @@ import Skillset from '../components/Skillset'
 function Skills() {
     return (
         <div>
-            <h2>Employment Application - Skillset</h2>
+            <h2>Employment Application</h2>
             <Skillset />
         </div>
     )

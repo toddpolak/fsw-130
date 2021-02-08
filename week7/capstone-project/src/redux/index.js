@@ -4,6 +4,11 @@ const initialState = {
     first_name: '',
     last_name: '',
     address: '',
+    city: '',
+    state: '',
+    zip: '',
+    phone: '',
+    email: '',
     skillsetSummary: '',
     skills: [], 
     workExperience: []
@@ -43,7 +48,13 @@ function reducer(state = initialState, action) {
             return {
                 ...state,
                 first_name: action.payload.first_name,
-                last_name: action.payload.last_name
+                last_name: action.payload.last_name,
+                address: action.payload.address,
+                city: action.payload.city,
+                state: action.payload.state,
+                zip: action.payload.zip,
+                phone: action.payload.phone,
+                email: action.payload.email
             }
         case 'ADD_SKILLSET':
             return {

@@ -4,7 +4,7 @@ import Experience from '../components/Experience'
 function WorkHistory() {
     return (
         <div>
-            <h2>Employment Application - Work History</h2>
+            <h2>Employment Application</h2>
             <Experience />
         </div>
     )

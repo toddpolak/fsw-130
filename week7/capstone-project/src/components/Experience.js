@@ -17,6 +17,7 @@ function Experience() {
 
     return (
         <div className='entry-page'>
+            <h2>Work History</h2>
             <div>
                 <AddExperience />
             </div>
@@ -31,7 +32,6 @@ function Experience() {
                     </div>
                 )}
             </div>
-
             <div className='btn-area'>
                 <button onClick={handlePrev}>
                     Prev
