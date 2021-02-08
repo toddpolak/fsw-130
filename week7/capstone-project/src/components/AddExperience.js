@@ -25,11 +25,7 @@ function WorkHistoryForm() {
     }
 
     function addExperience() {
-
-        console.log(inputs)
-
         dispatch(addWorkExperience(inputs))
-
         setInputs(initInputs)
     }
 
@@ -41,33 +37,51 @@ function WorkHistoryForm() {
                     name='employer_name'
                     value={inputs.employer_name}
                     onChange={handleChange}
-                    placeholder='Employer Name' />
+                    placeholder='Employer Name'
+                    className='input-name' />
                 <input
                     type='text'
                     name='phone'
                     value={inputs.phone}
                     onChange={handleChange}
-                    placeholder='Phone' />
+                    placeholder='Phone'
+                    className='input-phone' />
             </div>
-
+            <div className='experience-duties'>
+                <textarea
+                    type='text'
+                    name='summary'
+                    value={inputs.summary}
+                    onChange={handleChange}
+                    placeholder='Duties Performed' />
+            </div>
+            <div>
+                <label>From:</label>
+                <input
+                    type='date'
+                    name='from_date'
+                    value={inputs.from_date}
+                    onChange={handleChange} />
+                <label>To:</label>
+                <input
+                    type='date'
+                    name='to_date'
+                    value={inputs.to_date}
+                    onChange={handleChange} />
+            </div>
             <div>
                 <button onClick={addExperience}>
                     Add
                 </button>
             </div>
-
             <div className='work_experience'>
                 {
                     info.workExperience.map((item, index) =>
                         <div key={index}></div>
                 )}
             </div>
-
         </div>
-
-
     )
-
 }
 
 export default WorkHistoryForm

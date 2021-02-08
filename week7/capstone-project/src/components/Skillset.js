@@ -8,8 +8,6 @@ function Skillset() {
     const info = useSelector(info => info)
     const history = useHistory()
 
-   // console.log('info: ', info)
-
     const initSummaryInput = {
         summary: info.skillsetSummary.summary || ''
     }
@@ -35,20 +33,21 @@ function Skillset() {
     }
 
     function addSkill() {
-
-        console.log('itemInput: ', itemInput)
-
         dispatch(addSkillset(itemInput))
         setItemInput(initItemInput)
     }
 
     function handleNext() {
         dispatch(addSkillsetSummary(summaryInput))
-        history.push("/workhistory")
+        history.push('/workhistory')
+    }
+
+    function handlePrev() {
+        history.push('/')
     }
 
     return (
-        <div>
+        <div className='entry-page'>
             <div>
                 <textarea
                     type='text'
@@ -64,8 +63,6 @@ function Skillset() {
                     value={itemInput.item}
                     onChange={handleItemChange}
                     placeholder='Add Skill' />
-            </div>
-            <div>
                 <button onClick={addSkill}>
                     Add Skill
                 </button>
@@ -77,13 +74,14 @@ function Skillset() {
                     )}
                 </ul>
             </div>
-
-            <div>
+            <div className='btn-area'>
+                <button onClick={handlePrev}>
+                    Prev
+                </button>
                 <button onClick={handleNext}>
                     Next
                 </button>
             </div>
-
         </div>
     )
 }

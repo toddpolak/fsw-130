@@ -22,12 +22,105 @@ h2 {
     text-align: center;
 }
 
-.work_experience {
-    width: 650px;
+input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.input-name {
+    width: 200px;
+}
+
+.input-address {
+    width: 200px;
+}
+
+.input-city {
+    width: 150px;
+}
+
+.input-state {
+    width: 50px;
+}
+.input-zip {
+    width: 75px;
+}
+
+.input-phone {
+    width: 200px;
+}
+
+.input-email {
+    width: 234px;
+}
+
+textarea {
+    font-size: 14px;
+    resize: none;
+    overflow: hidden;
+    height: 70px;
+    width: 350px;
+    border-radius: 8px;
+}
+
+.experience-duties textarea {
+    width: 450px;
+}
+
+button {
+    background-color: antiquewhite;
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: lightsalmon;
+}
+
+.btn-area {
+    width: 300px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.btn-area button {
+    margin-right: 5px;
+}
+
+.btn-area button:last-child {
+    margin-right: 0px;
+}
+
+.entry-page {
+    background-color: lightgray;
+    min-height: 400px;
+    padding: 30px;
+    border: 1px solid black;
+}
+
+.summary-page {
+    padding: 50px;
+    border: 1px solid black;
+}
+
+.work-experience {
+    width: 300px;
     display: grid;
-    grid-template-areas: 'a a a';
-    grid-auto-columns: 210px;
+    grid-template-areas: 'a';
+    grid-auto-columns: 250px;
     grid-row-gap: 10px;
     grid-column-gap: 10px;
     margin: auto;
+    border: 1px solid black;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
 }

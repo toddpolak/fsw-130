@@ -10,9 +10,6 @@ const initialState = {
 }
 
 export function addBasicInfo(info) {
-
-    console.log('info: ', info)
-
     return {
         type: 'ADD_BASIC_INFO',
         payload: info
@@ -34,9 +31,6 @@ export function addSkillsetSummary(skillsetSummary) {
 }
 
 export function addWorkExperience(items) {
-
-    console.log('addWorkHistory: ', items)
-
     return {
         type: 'ADD_WORK_EXPERIENCE',
         payload: items
@@ -46,9 +40,6 @@ export function addWorkExperience(items) {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_BASIC_INFO':
-
-            console.log('action.payload: ', action.payload)
-
             return {
                 ...state,
                 first_name: action.payload.first_name,
@@ -65,15 +56,11 @@ function reducer(state = initialState, action) {
                 skillsetSummary: action.payload
             }
         case 'ADD_WORK_EXPERIENCE':
-
-            //return state.workhistory = [...state.workhistory, action.payload]
-
             return {
                 ...state,
                 workExperience: [...state.workExperience, action.payload]
             }
             
-
         default:
             return state
     }

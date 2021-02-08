@@ -28,89 +28,78 @@ function BasicInfo() {
     }
 
     function handleSave() {
-
-        console.log('inputs: ', inputs)
-
         dispatch(addBasicInfo(inputs))
-        //setInputs(initInputs)
-
         history.push("/skillset")
     }
 
     return (
-
+        <div className='entry-page'>
             <div>
-
-                <div>
-                    <input
-                        type='text'
-                        name='first_name'
-                        value={inputs.first_name}
-                        onChange={handleChange}
-                        placeholder='First Name' />
-                    <input
-                        type='text'
-                        name='last_name'
-                        value={inputs.last_name}
-                        onChange={handleChange}
-                        placeholder='Last Name' />
-                </div>
-
-                <div>
-                    <input
-                        type='text'
-                        name='address'
-                        value={inputs.address}
-                        onChange={handleChange}
-                        placeholder='Address' />
-                </div>
-
-                <div>
-                    <input
-                        type='text'
-                        name='city'
-                        value={inputs.city}
-                        onChange={handleChange}
-                        placeholder='City' />
-                    <input
-                        type='text'
-                        name='state'
-                        value={inputs.state}
-                        onChange={handleChange}
-                        placeholder='State' />
-                    <input
-                        type='text'
-                        name='zip'
-                        value={inputs.zip}
-                        onChange={handleChange}
-                        placeholder='Zip' />
-
-                </div>
-
-                <div>
-                    <input
-                        type='text'
-                        name='phone'
-                        value={inputs.phone}
-                        onChange={handleChange}
-                        placeholder='Phone' />
-                    <input
-                        type='text'
-                        name='email'
-                        value={inputs.email}
-                        onChange={handleChange}
-                        placeholder='Email' />
-                </div>
-
-
-                <div>
-                    <button onClick={handleSave}>Next</button>
-                </div>
-
-
+                <input
+                    type='text'
+                    name='first_name'
+                    value={inputs.first_name}
+                    onChange={handleChange}
+                    placeholder='First Name'
+                    className='input-name' />
+                <input
+                    type='text'
+                    name='last_name'
+                    value={inputs.last_name}
+                    onChange={handleChange}
+                    placeholder='Last Name'
+                    className='input-name' />
             </div>
-
-
+            <div>
+                <input
+                    type='text'
+                    name='address'
+                    value={inputs.address}
+                    onChange={handleChange}
+                    placeholder='Address'
+                    className='input-address' />
+                <input
+                    type='text'
+                    name='city'
+                    value={inputs.city}
+                    onChange={handleChange}
+                    placeholder='City'
+                    className='input-city' />
+                <input
+                    type='text'
+                    name='state'
+                    value={inputs.state}
+                    onChange={handleChange}
+                    placeholder='State'
+                    className='input-state' />
+                <input
+                    type='text'
+                    name='zip'
+                    value={inputs.zip}
+                    onChange={handleChange}
+                    placeholder='Zip'
+                    className='input-zip' />
+            </div>
+            <div>
+                <input
+                    type='text'
+                    name='phone'
+                    value={inputs.phone}
+                    onChange={handleChange}
+                    placeholder='Phone'
+                    className='input-phone' />
+                <input
+                    type='text'
+                    name='email'
+                    value={inputs.email}
+                    onChange={handleChange}
+                    placeholder='Email'
+                    className='input-email' />
+            </div>
+            <div className='btn-area'>
+                <button onClick={handleSave}>Next</button>
+            </div>
+        </div>
     )
 }
 

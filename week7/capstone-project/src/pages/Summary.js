@@ -4,11 +4,11 @@ import { useSelector } from 'react-redux'
 function Summary() {
     const info = useSelector(info => info)
     return (
-
         <div>
-            {
-                console.log('summary: ', info)
-            }
+            <h2>Employment Application - Summary</h2>
+            <div className='summary-page'>
+
+            </div>
         </div>
     )
 }

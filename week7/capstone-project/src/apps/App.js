@@ -5,6 +5,7 @@ import Home from '../pages/Home'
 import Skills from '../pages/Skills'
 import WorkHistory from '../pages/WorkHistory'
 import Summary from '../pages/Summary'
+import Footer from '../components/Footer'
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                 <Route path="/workhistory" component={WorkHistory}></Route>
                 <Route path="/summary" component={Summary}></Route>
             </Switch>
+            <Footer />
         </div>
     )
 }
