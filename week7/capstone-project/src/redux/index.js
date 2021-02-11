@@ -11,7 +11,8 @@ const initialState = {
     email: '',
     skillsetSummary: '',
     skills: [], 
-    workExperience: []
+    workExperience: [],
+    submitted: false
 }
 
 export function addBasicInfo(info) {
@@ -42,6 +43,13 @@ export function addWorkExperience(items) {
     }
 }
 
+export function formSubmitted(submitted) {
+    return {
+        type: 'FORM_SUBMITTED',
+        payload: submitted
+    }
+}
+
 function reducer(state = initialState, action) {
     switch (action.type) {
         case 'ADD_BASIC_INFO':
@@ -54,7 +62,8 @@ function reducer(state = initialState, action) {
                 state: action.payload.state,
                 zip: action.payload.zip,
                 phone: action.payload.phone,
-                email: action.payload.email
+                email: action.payload.email,
+                submitted: false
             }
         case 'ADD_SKILLSET':
             return {
@@ -71,7 +80,12 @@ function reducer(state = initialState, action) {
                 ...state,
                 workExperience: [...state.workExperience, action.payload]
             }
-            
+        case 'FORM_SUBMITTED':
+            state = initialState
+            return {
+                ...state,
+                submitted: true
+            }
         default:
             return state
     }

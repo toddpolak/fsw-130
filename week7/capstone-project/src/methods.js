@@ -9,6 +9,6 @@ module.exports.formatPhone = num => {
 
     cleanNum = cleanNum.replace(/-/g, "").replace(/\./g, "")
 
-    return '(' + cleanNum.slice(0, 3) + ')'
+    return '(' + cleanNum.slice(0, 3) + ') '
         + cleanNum.slice(3, 6) + '-' + cleanNum.slice(6)
 }

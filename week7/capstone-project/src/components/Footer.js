@@ -3,7 +3,9 @@ import React from "react"
 function Footer() {
     return (
         <footer>
-            <span>&copy; 2020 Webdev Student</span>
+            <span>
+                &copy; {`${new Date().getFullYear()} Webdev Student`}
+            </span>
         </footer>
     )
 }

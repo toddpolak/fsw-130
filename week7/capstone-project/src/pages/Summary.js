@@ -1,26 +1,27 @@
-import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { formSubmitted } from '../redux'
 import { useHistory } from 'react-router-dom'
 import methods from '../methods'
 
 function Summary() {
+    const dispatch = useDispatch()
     const info = useSelector(info => info)
-    const [submitted, setSubmitted] = useState(false)
     const history = useHistory()
 
     function handlePrev() {
-        history.push('/skillset')
+        history.push('/workhistory')
     }
 
     function handleSubmit() {
-        setSubmitted(true)
+        dispatch(formSubmitted(true))
     }
 
     return (
         <div>
             <h2>Employment Application</h2>
             <div className='summary-page'>
-                {!submitted ?
+                {!info.submitted ?
                     <>
                         <h2>Summary</h2>
                         <div>
@@ -28,7 +29,11 @@ function Summary() {
                             <div>
                                 {info.address}
                                 <div>
-                                    {`${info.city}, ${info.state} ${info.zip}`}
+                                    {
+                                        (info.city !== '' && info.state !== '' && info.zip !== '')
+                                            ? `${info.city}, ${info.state} ${info.zip}`
+                                            : ``
+                                    }
                                 </div>
                                 <div>
                                     <div>{methods.formatPhone(info.phone)}</div>
@@ -36,6 +41,13 @@ function Summary() {
                                 </div>
                             </div>
                             <div>
+                                <div className='skillset-summary'>
+                                    {
+                                        info.skillsetSummary.summary !== ''
+                                            ? `Summary: ${info.skillsetSummary.summary}`
+                                            : ``
+                                    }
+                                </div>
                                 <ul>
                                     {info.skills.map((skill, index) =>
                                         <li key={index}>{skill.item}</li>
@@ -47,9 +59,9 @@ function Summary() {
                                     info.workExperience.map((item, index) =>
                                         <div key={index}>
                                             <div>{item.employer_name}</div>
-                                            <div>{item.phone}</div>
-                                            <div>{item.from_date}</div>
-                                            <div>{item.to_date}</div>
+                                            <div>{methods.formatPhone(item.phone)}</div>
+                                            <div>{`From: ${item.from_date}`}</div>
+                                            <div>{`To: ${item.to_date}`}</div>
                                             <div>{item.summary}</div>
                                         </div>
                                     )}

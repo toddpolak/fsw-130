@@ -109,6 +109,10 @@ button:hover {
     border: 1px solid black;
 }
 
+.skillset-summary {
+    padding: 20px;
+}
+
 .summary-page {
     background-color: lightgray;
     width: 400px;
