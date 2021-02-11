@@ -18,15 +18,30 @@ header, footer {
     text-align: center;
 }
 
-.container :nth-child(2) {
-    display: inline;
-}
-
 li {
     padding: 5px;
 }
 
+h3 {
+    padding: 20px;
+}
+
+.img-container {
+    text-align: center;
+}
+
+.container img {
+    width: 334px;
+    height: 276px;
+}
+
+.btm-img-container {
+    text-align: center;
+}
+
 .btm-img {
+    width: 364px;
+    height: 138px;
     border: 1px solid black;
 }
 
@@ -43,5 +58,10 @@ li {
 
     .container {
         width: 768px;
+    }
+
+    .container img {
+        width: 500px;
+        height: 413px;
     }
 }
