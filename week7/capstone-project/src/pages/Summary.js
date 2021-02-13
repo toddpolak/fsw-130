@@ -23,7 +23,7 @@ function Summary() {
             <div className='summary-page'>
                 {!info.submitted ?
                     <>
-                        <h2>Summary</h2>
+                        <h2>Application Summary</h2>
                         <div>
                             {`${info.first_name} ${info.last_name}`}
                             <div>
